@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajpoot Dhaba — Authentic Indian Cuisine</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <h1>🍛 Rajpoot Dhaba</h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#order">Order</a></li>
+      <li><a href="#booking">Book a Table</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Authentic Flavours of Rajasthan</h2>
+      <p>Experience the rich, aromatic taste of traditional Indian cuisine crafted with love and the finest spices.</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary">View Menu</a>
+        <a href="#booking" class="btn btn-secondary">Book a Table</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Menu</h2>
+      <div class="category-filters">
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="starters">Starters</button>
+        <button class="filter-btn" data-category="mains">Mains</button>
+        <button class="filter-btn" data-category="breads">Breads</button>
+        <button class="filter-btn" data-category="rice">Rice</button>
+        <button class="filter-btn" data-category="desserts">Desserts</button>
+        <button class="filter-btn" data-category="drinks">Drinks</button>
+      </div>
+      <div id="menu-grid" class="menu-grid">
+        <p class="loading">Loading menu...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Section -->
+  <section id="order" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Place an Order</h2>
+      <form id="order-form" class="form-card">
+        <div class="form-group">
+          <label for="order-name">Full Name *</label>
+          <input type="text" id="order-name" name="customerName" required placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+          <label for="order-email">Email *</label>
+          <input type="email" id="order-email" name="customerEmail" required placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="order-phone">Phone *</label>
+          <input type="tel" id="order-phone" name="customerPhone" required placeholder="+91 98765 43210" />
+        </div>
+        <div class="form-group">
+          <label for="order-address">Delivery Address</label>
+          <textarea id="order-address" name="deliveryAddress" rows="2" placeholder="Enter delivery address (optional)"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Your Cart</label>
+          <div id="cart-summary" class="cart-summary">
+            <p class="empty-cart">No items in cart. Browse the menu and add items.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="order-notes">Special Instructions</label>
+          <textarea id="order-notes" name="notes" rows="2" placeholder="Any special requests?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Place Order</button>
+      </form>
+      <div id="order-message" class="form-message hidden"></div>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking" class="section">
+    <div class="container">
+      <h2 class="section-title">Book a Table</h2>
+      <form id="booking-form" class="form-card">
+        <div class="form-group">
+          <label for="booking-name">Full Name *</label>
+          <input type="text" id="booking-name" name="customerName" required placeholder="Your full name" />
+        </div>
+        <div class="form-group">
+          <label for="booking-email">Email *</label>
+          <input type="email" id="booking-email" name="customerEmail" required placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="booking-phone">Phone *</label>
+          <input type="tel" id="booking-phone" name="customerPhone" required placeholder="+91 98765 43210" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="booking-date">Date *</label>
+            <input type="date" id="booking-date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label for="booking-time">Time *</label>
+            <input type="time" id="booking-time" name="time" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="booking-guests">Number of Guests *</label>
+          <input type="number" id="booking-guests" name="guests" required min="1" max="20" placeholder="2" />
+        </div>
+        <div class="form-group">
+          <label for="booking-requests">Special Requests</label>
+          <textarea id="booking-requests" name="specialRequests" rows="2" placeholder="Dietary requirements, occasion, etc."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Confirm Booking</button>
+      </form>
+      <div id="booking-message" class="form-message hidden"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Visit Us</h3>
+          <p>📍 123 Spice Lane, Jaipur, Rajasthan 302001</p>
+          <p>📞 +91 98765 43210</p>
+          <p>✉️ hello@rajpootdhaba.com</p>
+          <h3>Opening Hours</h3>
+          <p>Mon – Fri: 11:00 AM – 10:00 PM</p>
+          <p>Sat – Sun: 10:00 AM – 11:00 PM</p>
+        </div>
+        <form id="contact-form" class="form-card">
+          <div class="form-group">
+            <label for="contact-name">Name *</label>
+            <input type="text" id="contact-name" name="name" required placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email *</label>
+            <input type="email" id="contact-email" name="email" required placeholder="your@email.com" />
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject *</label>
+            <input type="text" id="contact-subject" name="subject" required placeholder="How can we help?" />
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message *</label>
+            <textarea id="contact-message" name="message" rows="4" required placeholder="Your message..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+      </div>
+      <div id="contact-message-status" class="form-message hidden"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Rajpoot Dhaba. All rights reserved.</p>
+      <p>Crafted with ❤️ and authentic spices.</p>
+    </div>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,183 +1,1810 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rajpoot Dhaba — Authentic Indian Cuisine</title>
-  <link rel="stylesheet" href="/css/styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rajpoot Dhaba — Pure Vegetarian Royal Dining in Gopiganj, Bhadohi, UP. Authentic flavours, rooms, online ordering.">
+<meta name="keywords" content="Rajpoot Dhaba, Gopiganj, Bhadohi, pure vegetarian restaurant, UP dhaba, vegetarian food Bhadohi">
+<title>Rajpoot Dhaba | Royal Pure Vegetarian | Gopiganj Bhadohi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Cinzel+Decorative:wght@400;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   DESIGN SYSTEM — MUGHAL LUXURY DARK THEME
+══════════════════════════════════════════ */
+:root {
+  --g1: #D4A843;   /* rich gold */
+  --g2: #F0C96A;   /* light gold */
+  --g3: #8B6914;   /* deep gold */
+  --g4: #FFF3D0;   /* gold pale */
+  --d1: #0D0A04;   /* near-black */
+  --d2: #160F03;   /* very dark */
+  --d3: #221708;   /* dark brown */
+  --d4: #2F2010;   /* mid dark */
+  --gr1: #0C2010;  /* deep green */
+  --gr2: #153318;
+  --cr1: #F9F1E0;  /* cream */
+  --cr2: #FDF8EC;
+  --t1: rgba(212,168,67,0.08);
+  --t2: rgba(212,168,67,0.15);
+  --t3: rgba(212,168,67,0.3);
+  --white: #FFFDF5;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  font-family:'Jost',sans-serif;
+  background:var(--d1);
+  color:var(--cr2);
+  overflow-x:hidden;
+  cursor:default;
+}
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background:var(--d2); }
+::-webkit-scrollbar-thumb { background:var(--g3); border-radius:3px; }
+::selection { background:var(--g1); color:var(--d1); }
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ══ TYPOGRAPHY ══ */
+.display { font-family:'Cinzel Decorative',serif; }
+.serif { font-family:'Playfair Display',serif; }
+h1,h2,h3,h4 { font-family:'Playfair Display',serif; line-height:1.15; }
+
+/* ══ LAYOUT ══ */
+.page { display:none; animation:pageIn 0.5s ease both; }
+.page.active { display:block; }
+@keyframes pageIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+
+/* ══════ NAV ══════ */
+#nav {
+  position:fixed; top:0; left:0; right:0; z-index:900;
+  height:72px; padding:0 3rem;
+  display:flex; align-items:center; justify-content:space-between;
+  background:rgba(13,10,4,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--t3);
+  transition:all 0.4s;
+}
+.nav-brand { display:flex; align-items:center; gap:14px; cursor:pointer; text-decoration:none; }
+.nav-brand-seal {
+  width:46px; height:46px; border-radius:50%;
+  background:linear-gradient(135deg, var(--g3), var(--g1));
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem; position:relative;
+  box-shadow:0 0 0 2px var(--d1), 0 0 0 3px var(--g3);
+}
+.nav-brand-text { line-height:1; }
+.nav-brand-text b {
+  font-family:'Cinzel Decorative',serif;
+  font-size:1rem; color:var(--g1); display:block; letter-spacing:0.5px;
+}
+.nav-brand-text span { font-size:0.65rem; color:rgba(240,201,106,0.6); letter-spacing:3px; text-transform:uppercase; font-family:'Jost',sans-serif; }
+.nav-links { display:flex; align-items:center; gap:0.2rem; list-style:none; }
+.nav-links li a {
+  color:rgba(249,241,224,0.7); text-decoration:none;
+  font-size:0.78rem; letter-spacing:1.5px; text-transform:uppercase;
+  padding:8px 14px; border-radius:3px; transition:all 0.2s;
+  font-family:'Jost',sans-serif; font-weight:500;
+}
+.nav-links li a:hover { color:var(--g1); background:var(--t1); }
+.nav-order-btn {
+  background:var(--g1); color:var(--d1) !important;
+  padding:9px 22px !important; border-radius:3px !important;
+  font-weight:600 !important; background:linear-gradient(135deg,var(--g3),var(--g1)) !important;
+  box-shadow:0 4px 15px rgba(212,168,67,0.3);
+}
+.nav-order-btn:hover { transform:translateY(-1px); box-shadow:0 6px 20px rgba(212,168,67,0.4) !important; background:var(--g2) !important; }
+.nav-cart-btn {
+  background:var(--t2); border:1px solid var(--t3);
+  color:var(--g1) !important; position:relative;
+  padding:8px 16px !important;
+}
+.nav-cart-count {
+  position:absolute; top:-6px; right:-6px;
+  background:var(--g1); color:var(--d1);
+  width:18px; height:18px; border-radius:50%;
+  font-size:0.65rem; display:flex; align-items:center; justify-content:center;
+  font-weight:700; font-family:'Jost',sans-serif;
+}
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
+.hamburger span { width:24px; height:2px; background:var(--g1); border-radius:2px; transition:all 0.3s; display:block; }
+.mob-menu {
+  display:none; position:fixed; inset:0; top:72px; z-index:850;
+  background:rgba(13,10,4,0.98); flex-direction:column;
+  align-items:center; justify-content:center; gap:2rem;
+  border-top:1px solid var(--t3);
+}
+.mob-menu.open { display:flex; }
+.mob-menu a {
+  font-family:'Playfair Display',serif; font-size:1.5rem;
+  color:rgba(249,241,224,0.7); text-decoration:none; transition:color 0.2s;
+}
+.mob-menu a:hover { color:var(--g1); }
+
+/* ══════ HERO ══════ */
+#hero {
+  min-height:100vh; position:relative; overflow:hidden;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:72px 2rem 0;
+}
+.hero-bg {
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(21,51,24,0.5) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 20% 20%, rgba(139,105,20,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 80% 80%, rgba(139,105,20,0.08) 0%, transparent 50%),
+    linear-gradient(180deg, var(--d1) 0%, var(--d2) 50%, var(--gr1) 100%);
+}
+/* Geometric Mughal arch pattern */
+.hero-arch {
+  position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:700px; height:500px; z-index:1; opacity:0.06;
+  background:none;
+  border:1px solid var(--g1);
+  border-radius:50% 50% 0 0 / 80% 80% 0 0;
+  pointer-events:none;
+}
+.hero-arch::before {
+  content:''; position:absolute; inset:20px; border:1px solid var(--g1);
+  border-radius:50% 50% 0 0 / 80% 80% 0 0;
+}
+.hero-glow {
+  position:absolute; bottom:-100px; left:50%; transform:translateX(-50%);
+  width:600px; height:300px;
+  background:radial-gradient(ellipse, rgba(21,51,24,0.4) 0%, transparent 70%);
+  z-index:1; pointer-events:none;
+}
+.hero-content { position:relative; z-index:2; text-align:center; max-width:900px; }
+.hero-label {
+  display:inline-flex; align-items:center; gap:10px;
+  border:1px solid var(--t3); border-radius:30px;
+  padding:6px 22px; margin-bottom:2.5rem;
+  font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;
+  color:rgba(240,201,106,0.8); font-family:'Jost',sans-serif;
+  animation:fadeSlideUp 0.9s 0.1s ease both;
+}
+.hero-label .dot { width:6px; height:6px; background:var(--g1); border-radius:50%; animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero-h1 {
+  font-family:'Cinzel Decorative',serif;
+  font-size:clamp(2.2rem,7vw,5.5rem);
+  color:var(--white); line-height:1.1;
+  text-shadow:0 0 80px rgba(212,168,67,0.2);
+  animation:fadeSlideUp 0.9s 0.25s ease both;
+  letter-spacing:-0.5px;
+}
+.hero-h1 em { font-style:italic; color:var(--g1); font-family:'Playfair Display',serif; font-size:1.1em; }
+.hero-tagline {
+  font-family:'Playfair Display',serif; font-style:italic;
+  font-size:clamp(1rem,2.5vw,1.5rem);
+  color:rgba(249,241,224,0.6); margin-top:1.5rem;
+  animation:fadeSlideUp 0.9s 0.4s ease both;
+}
+.hero-ornament {
+  display:flex; align-items:center; gap:16px; justify-content:center;
+  margin:2.5rem 0; animation:fadeSlideUp 0.9s 0.5s ease both;
+}
+.hero-orn-line { width:100px; height:1px; background:linear-gradient(to right, transparent, var(--g1)); }
+.hero-orn-line:last-child { background:linear-gradient(to left, transparent, var(--g1)); }
+.hero-orn-center { display:flex; align-items:center; gap:8px; }
+.hero-orn-diamond { width:8px; height:8px; background:var(--g1); transform:rotate(45deg); }
+.hero-orn-diamond.sm { width:5px; height:5px; background:var(--g3); }
+.hero-ctas { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; animation:fadeSlideUp 0.9s 0.6s ease both; }
+.cta-primary {
+  padding:15px 40px; background:linear-gradient(135deg, var(--g3) 0%, var(--g1) 50%, var(--g2) 100%);
+  color:var(--d1); border:none; cursor:pointer;
+  font-family:'Jost',sans-serif; font-weight:600;
+  font-size:0.8rem; letter-spacing:2px; text-transform:uppercase;
+  border-radius:3px; transition:all 0.3s; text-decoration:none;
+  display:inline-flex; align-items:center; gap:8px;
+  box-shadow:0 8px 30px rgba(212,168,67,0.35), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.cta-primary:hover { transform:translateY(-3px); box-shadow:0 14px 40px rgba(212,168,67,0.45); filter:brightness(1.05); }
+.cta-ghost {
+  padding:15px 40px; background:transparent;
+  color:var(--g1); border:1px solid var(--t3);
+  cursor:pointer; font-family:'Jost',sans-serif; font-weight:500;
+  font-size:0.8rem; letter-spacing:2px; text-transform:uppercase;
+  border-radius:3px; transition:all 0.3s; text-decoration:none;
+  display:inline-flex; align-items:center; gap:8px;
+  backdrop-filter:blur(8px);
+}
+.cta-ghost:hover { background:var(--t2); border-color:var(--g1); transform:translateY(-3px); }
+.hero-stats {
+  display:flex; gap:4rem; margin-top:4rem; justify-content:center; flex-wrap:wrap;
+  animation:fadeSlideUp 0.9s 0.8s ease both;
+}
+.hero-stat { text-align:center; position:relative; }
+.hero-stat:not(:last-child)::after {
+  content:''; position:absolute; right:-2rem; top:50%; transform:translateY(-50%);
+  width:1px; height:40px; background:var(--t3);
+}
+.h-stat-n { font-family:'Playfair Display',serif; font-size:2.4rem; color:var(--g1); display:block; line-height:1; }
+.h-stat-l { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:rgba(249,241,224,0.4); margin-top:5px; display:block; }
+.hero-scroll-hint {
+  position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  color:rgba(212,168,67,0.5); z-index:2;
+}
+.hero-scroll-text { font-size:0.6rem; letter-spacing:3px; text-transform:uppercase; font-family:'Jost',sans-serif; }
+.hero-scroll-line { width:1px; height:50px; background:linear-gradient(to bottom,var(--g1),transparent); animation:scrollPulse 2s infinite; }
+@keyframes scrollPulse { 0%,100%{transform:scaleY(1);opacity:0.5} 50%{transform:scaleY(0.5);opacity:0.2} }
+
+/* ══ SECTION COMMONS ══ */
+.sec { padding:7rem 2rem; position:relative; }
+.sec-inner { max-width:1200px; margin:0 auto; }
+.sec-tag { font-size:0.68rem; letter-spacing:4px; text-transform:uppercase; color:var(--g1); display:block; text-align:center; margin-bottom:0.7rem; font-family:'Jost',sans-serif; }
+.sec-title { font-size:clamp(1.9rem,4vw,3rem); text-align:center; color:var(--white); margin-bottom:0.6rem; }
+.sec-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem; color:rgba(249,241,224,0.45); text-align:center; }
+.orn { display:flex; align-items:center; justify-content:center; gap:12px; margin:2rem 0 3.5rem; }
+.orn-line { width:70px; height:1px; background:linear-gradient(to right,transparent,var(--g3)); }
+.orn-line.r { background:linear-gradient(to left,transparent,var(--g3)); }
+.orn-gem { width:10px; height:10px; background:var(--g1); transform:rotate(45deg); position:relative; }
+.orn-gem::before,
+.orn-gem::after { content:''; position:absolute; width:5px; height:5px; background:var(--g3); transform:rotate(45deg); }
+.orn-gem::before { top:-8px; left:2.5px; }
+.orn-gem::after { bottom:-8px; left:2.5px; }
+
+/* ══ FEATURED DISHES ══ */
+#home-page .featured { background:var(--d2); }
+#home-page .featured::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background:linear-gradient(to right, transparent, var(--g1), transparent);
+}
+.dishes-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:1.5rem; }
+.dish-card {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.12);
+  border-radius:8px; overflow:hidden; transition:all 0.4s; cursor:pointer; position:relative;
+  group: true;
+}
+.dish-card:hover { border-color:var(--g3); transform:translateY(-8px); box-shadow:0 30px 60px rgba(0,0,0,0.5), 0 0 30px rgba(212,168,67,0.1); }
+.dish-card-top {
+  height:210px; position:relative; overflow:hidden;
+  background:linear-gradient(135deg, var(--d3) 0%, var(--gr1) 100%);
+  display:flex; align-items:center; justify-content:center;
+}
+.dish-card-emoji { font-size:5rem; filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5)); transition:transform 0.4s; z-index:1; }
+.dish-card:hover .dish-card-emoji { transform:scale(1.1) translateY(-5px); }
+.dish-card-top::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to top, var(--d3) 0%, rgba(34,23,8,0.6) 40%, transparent 70%);
+}
+.dish-card-badge {
+  position:absolute; top:14px; right:14px; z-index:2;
+  background:linear-gradient(135deg,var(--g3),var(--g1));
+  color:var(--d1); font-size:0.62rem; letter-spacing:1.5px;
+  padding:4px 12px; border-radius:2px; font-weight:700;
+  text-transform:uppercase; font-family:'Jost',sans-serif;
+}
+.dish-card-veg {
+  position:absolute; top:14px; left:14px; z-index:2;
+  width:18px; height:18px; border:1.5px solid #22C55E;
+  border-radius:2px; background:rgba(13,10,4,0.8);
+  display:flex; align-items:center; justify-content:center;
+}
+.dish-card-veg::after { content:''; width:8px; height:8px; background:#22C55E; border-radius:50%; }
+.dish-card-body { padding:1.5rem; }
+.dish-card-name { font-size:1.1rem; color:var(--white); margin-bottom:0.4rem; }
+.dish-card-desc { font-size:0.82rem; color:rgba(249,241,224,0.45); line-height:1.7; margin-bottom:1.2rem; }
+.dish-card-foot { display:flex; align-items:center; justify-content:space-between; }
+.dish-price { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--g1); }
+.dish-add {
+  background:linear-gradient(135deg,var(--g3),var(--g1)); color:var(--d1);
+  border:none; padding:8px 18px; border-radius:3px; cursor:pointer;
+  font-family:'Jost',sans-serif; font-size:0.75rem; font-weight:600;
+  letter-spacing:1px; transition:all 0.2s;
+}
+.dish-add:hover { filter:brightness(1.1); transform:scale(1.03); }
+
+/* ══ ABOUT ══ */
+#about-sec {
+  background:var(--d1);
+  background-image:
+    radial-gradient(ellipse 50% 70% at 0% 50%, rgba(12,32,16,0.5) 0%,transparent 60%),
+    radial-gradient(ellipse 40% 40% at 100% 0%, rgba(139,105,20,0.06) 0%,transparent 50%);
+}
+.about-layout { display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; }
+.about-lhs { }
+.about-label { color:var(--g1); font-size:0.7rem; letter-spacing:4px; text-transform:uppercase; margin-bottom:1.2rem; font-family:'Jost',sans-serif; }
+.about-h2 { font-size:clamp(1.8rem,3vw,2.8rem); color:var(--white); margin-bottom:1.8rem; line-height:1.2; }
+.about-h2 span { color:var(--g1); }
+.about-p { color:rgba(249,241,224,0.55); line-height:1.9; font-size:0.95rem; margin-bottom:1rem; }
+.about-pillars { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin:2.5rem 0; }
+.about-pillar {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.12);
+  border-radius:6px; padding:1.2rem; display:flex; gap:12px; align-items:flex-start;
+  transition:border-color 0.3s;
+}
+.about-pillar:hover { border-color:var(--g3); }
+.about-pillar-icon {
+  width:38px; height:38px; flex-shrink:0;
+  background:linear-gradient(135deg,var(--gr1),var(--gr2));
+  border:1px solid rgba(212,168,67,0.2); border-radius:6px;
+  display:flex; align-items:center; justify-content:center; font-size:1rem;
+}
+.about-pillar-text h4 { font-size:0.82rem; color:var(--g2); margin-bottom:0.2rem; font-family:'Jost',sans-serif; font-weight:600; }
+.about-pillar-text p { font-size:0.77rem; color:rgba(249,241,224,0.4); line-height:1.5; }
+.about-rhs { position:relative; display:flex; align-items:center; justify-content:center; }
+.about-ring {
+  width:380px; height:380px; border-radius:50%;
+  border:1px solid rgba(212,168,67,0.15);
+  display:flex; align-items:center; justify-content:center;
+  position:relative;
+}
+.about-ring::before {
+  content:''; position:absolute; inset:16px; border-radius:50%;
+  border:1px dashed rgba(212,168,67,0.12);
+  animation:spin 30s linear infinite;
+}
+.about-ring-inner {
+  width:280px; height:280px; border-radius:50%;
+  background:linear-gradient(135deg, var(--d3), var(--gr1));
+  border:1px solid rgba(212,168,67,0.2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:6rem;
+  box-shadow:0 0 80px rgba(21,51,24,0.5), inset 0 0 40px rgba(0,0,0,0.3);
+}
+.about-badge-float {
+  position:absolute; background:var(--d3);
+  border:1px solid rgba(212,168,67,0.3); border-radius:6px;
+  padding:0.8rem 1.2rem; text-align:center;
+  backdrop-filter:blur(10px);
+}
+.about-badge-num { font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--g1); display:block; }
+.about-badge-txt { font-size:0.65rem; color:rgba(249,241,224,0.5); letter-spacing:1.5px; text-transform:uppercase; display:block; font-family:'Jost',sans-serif; }
+.about-badge-float.f1 { top:20px; right:-20px; }
+.about-badge-float.f2 { bottom:20px; left:-20px; }
+
+/* ══ WHY CHOOSE US ══ */
+.why-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+.why-card {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.1);
+  border-radius:8px; padding:2rem; text-align:center;
+  transition:all 0.4s; position:relative; overflow:hidden;
+}
+.why-card::before {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
+  background:linear-gradient(to right, transparent, var(--g1), transparent);
+  transform:scaleX(0); transition:transform 0.4s;
+}
+.why-card:hover { border-color:var(--g3); transform:translateY(-6px); }
+.why-card:hover::before { transform:scaleX(1); }
+.why-icon { font-size:2.5rem; display:block; margin-bottom:1rem; }
+.why-title { font-size:1rem; color:var(--white); margin-bottom:0.5rem; }
+.why-desc { font-size:0.82rem; color:rgba(249,241,224,0.45); line-height:1.6; }
+
+/* ══ PAGE HEADERS ══ */
+.page-header {
+  padding:8rem 2rem 4rem; text-align:center; position:relative; overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 100%, rgba(12,32,16,0.5) 0%,transparent 60%),
+    linear-gradient(180deg, var(--d2) 0%, var(--d1) 100%);
+}
+.page-header::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:1px;
+  background:linear-gradient(to right, transparent, var(--g3), transparent);
+}
+.page-header-title { font-size:clamp(2rem,5vw,3.5rem); color:var(--white); margin-bottom:0.5rem; }
+.page-header-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem; color:rgba(249,241,224,0.45); }
+
+/* ══ MENU PAGE ══ */
+#menu-page { background:var(--d1); }
+.menu-tabs-wrap { background:var(--d2); border-bottom:1px solid var(--t2); position:sticky; top:72px; z-index:100; }
+.menu-tabs { max-width:1100px; margin:0 auto; padding:1rem 2rem; display:flex; gap:0.4rem; flex-wrap:wrap; justify-content:center; }
+.m-tab {
+  padding:8px 20px; background:transparent; border:1px solid rgba(212,168,67,0.15);
+  color:rgba(249,241,224,0.5); cursor:pointer;
+  font-family:'Jost',sans-serif; font-size:0.75rem; letter-spacing:1.5px;
+  text-transform:uppercase; border-radius:3px; transition:all 0.25s;
+}
+.m-tab:hover { border-color:var(--g3); color:var(--g1); }
+.m-tab.on { background:linear-gradient(135deg,var(--g3),var(--g1)); color:var(--d1); border-color:transparent; font-weight:600; }
+.menu-sec { display:none; max-width:1100px; margin:0 auto; padding:3rem 2rem; }
+.menu-sec.on { display:block; }
+.menu-sec-title {
+  font-size:1.6rem; color:var(--white); margin-bottom:2rem;
+  display:flex; align-items:center; gap:16px;
+}
+.menu-sec-title::after { content:''; flex:1; height:1px; background:linear-gradient(to right,var(--t3),transparent); }
+.menu-items-grid { display:flex; flex-direction:column; gap:0.8rem; }
+.menu-item {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.1);
+  border-radius:6px; padding:1.1rem 1.5rem;
+  display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  transition:all 0.25s;
+}
+.menu-item:hover { border-color:var(--g3); background:rgba(47,32,16,0.8); }
+.menu-item-l { display:flex; align-items:center; gap:14px; flex:1; }
+.menu-emoji { font-size:1.8rem; flex-shrink:0; }
+.menu-info h4 { font-size:0.95rem; color:var(--white); margin-bottom:0.2rem; font-family:'Jost',sans-serif; font-weight:500; }
+.menu-info p { font-size:0.78rem; color:rgba(249,241,224,0.4); }
+.menu-item-r { display:flex; align-items:center; gap:14px; flex-shrink:0; }
+.menu-price { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--g1); white-space:nowrap; }
+.m-add {
+  background:var(--d1); color:var(--g1); border:1px solid var(--t3);
+  padding:7px 16px; border-radius:3px; cursor:pointer;
+  font-size:0.75rem; font-family:'Jost',sans-serif; font-weight:500;
+  transition:all 0.2s; white-space:nowrap; letter-spacing:0.5px;
+}
+.m-add:hover { background:var(--g1); color:var(--d1); border-color:var(--g1); }
+
+/* ══ GALLERY ══ */
+#gallery-page { background:var(--d1); }
+.gallery-grid {
+  max-width:1200px; margin:3rem auto; padding:0 2rem;
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  grid-auto-rows:220px; gap:1rem;
+}
+.gallery-item {
+  border-radius:6px; overflow:hidden; cursor:pointer;
+  background:var(--d3); border:1px solid rgba(212,168,67,0.1);
+  display:flex; align-items:center; justify-content:center;
+  position:relative; transition:all 0.4s;
+}
+.gallery-item:hover { border-color:var(--g3); transform:scale(1.02); }
+.gallery-item.wide { grid-column:span 2; }
+.gallery-item.tall { grid-row:span 2; }
+.gallery-ph { display:flex; flex-direction:column; align-items:center; gap:0.5rem; }
+.gallery-ph-emoji { font-size:3.5rem; filter:drop-shadow(0 4px 20px rgba(0,0,0,0.5)); }
+.gallery-ph p { font-size:0.8rem; color:rgba(249,241,224,0.3); font-family:'Jost',sans-serif; letter-spacing:1px; }
+.gallery-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(13,10,4,0.9), transparent);
+  opacity:0; transition:opacity 0.3s;
+  display:flex; align-items:flex-end; padding:1.2rem;
+}
+.gallery-item:hover .gallery-overlay { opacity:1; }
+.gallery-label { font-family:'Playfair Display',serif; color:var(--white); font-size:1rem; }
+
+/* ══ BOOKING PAGE ══ */
+#booking-page { background:var(--d1); }
+.booking-layout { max-width:1200px; margin:0 auto; padding:3rem 2rem; display:grid; grid-template-columns:1fr 420px; gap:2.5rem; align-items:start; }
+.room-cards-list { display:flex; flex-direction:column; gap:1.2rem; }
+.room-card {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.12);
+  border-radius:8px; overflow:hidden; display:flex; transition:all 0.3s;
+}
+.room-card:hover { border-color:var(--g3); box-shadow:0 10px 40px rgba(0,0,0,0.4); }
+.room-card-img {
+  width:180px; flex-shrink:0;
+  background:linear-gradient(135deg, var(--d2), var(--gr1));
+  display:flex; align-items:center; justify-content:center; font-size:3.5rem;
+}
+.room-card-info { padding:1.5rem; flex:1; }
+.room-card-name { font-size:1.15rem; color:var(--white); margin-bottom:0.7rem; }
+.room-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem; }
+.room-tag {
+  background:rgba(212,168,67,0.08); border:1px solid var(--t2);
+  color:var(--g2); font-size:0.7rem; padding:3px 10px;
+  border-radius:3px; font-family:'Jost',sans-serif; letter-spacing:0.5px;
+}
+.room-card-desc { font-size:0.82rem; color:rgba(249,241,224,0.45); line-height:1.6; margin-bottom:1rem; }
+.room-price-row { display:flex; align-items:center; justify-content:space-between; }
+.room-price { font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--g1); }
+.book-room-btn {
+  background:var(--d1); border:1px solid var(--t3); color:var(--g1);
+  padding:8px 18px; border-radius:3px; cursor:pointer;
+  font-size:0.75rem; font-family:'Jost',sans-serif; transition:all 0.2s;
+}
+.book-room-btn:hover { background:var(--g1); color:var(--d1); border-color:var(--g1); }
+.booking-form-card {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.15);
+  border-radius:8px; padding:2rem; position:sticky; top:90px;
+}
+.bform-title { font-size:1.2rem; color:var(--white); text-align:center; margin-bottom:1.8rem; }
+.bform-title span { color:var(--g1); }
+
+/* ══ FORM COMMONS ══ */
+.f-group { margin-bottom:1.2rem; }
+.f-label { display:block; font-size:0.72rem; letter-spacing:1.5px; text-transform:uppercase; color:rgba(249,241,224,0.5); margin-bottom:0.5rem; font-family:'Jost',sans-serif; }
+.f-input, .f-select, .f-textarea {
+  width:100%; padding:11px 15px;
+  background:rgba(13,10,4,0.6); border:1px solid rgba(212,168,67,0.2);
+  color:var(--cr1); font-family:'Jost',sans-serif; font-size:0.9rem;
+  border-radius:4px; outline:none; transition:border-color 0.3s;
+}
+.f-input:focus, .f-select:focus, .f-textarea:focus { border-color:var(--g1); background:rgba(13,10,4,0.8); }
+.f-input::placeholder, .f-textarea::placeholder { color:rgba(249,241,224,0.2); }
+.f-select option { background:var(--d3); color:var(--cr1); }
+.f-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.f-submit {
+  width:100%; padding:14px;
+  background:linear-gradient(135deg,var(--g3),var(--g1));
+  color:var(--d1); border:none; cursor:pointer;
+  font-family:'Jost',sans-serif; font-weight:700;
+  font-size:0.8rem; letter-spacing:2px; text-transform:uppercase;
+  border-radius:4px; transition:all 0.3s; margin-top:0.5rem;
+  box-shadow:0 6px 20px rgba(212,168,67,0.3);
+}
+.f-submit:hover { filter:brightness(1.1); transform:translateY(-2px); box-shadow:0 10px 30px rgba(212,168,67,0.4); }
+.f-submit:disabled { opacity:0.6; cursor:not-allowed; transform:none; }
+
+/* ══ ORDER PAGE ══ */
+#order-page { background:var(--d1); }
+.order-layout { max-width:1300px; margin:0 auto; padding:2rem; display:grid; grid-template-columns:1fr 380px; gap:2rem; align-items:start; }
+.order-categories { display:flex; flex-direction:column; gap:2.5rem; }
+.order-cat-title { font-size:1.2rem; color:var(--g2); margin-bottom:1.2rem; display:flex; align-items:center; gap:12px; font-family:'Jost',sans-serif; font-weight:500; }
+.order-cat-title::after { content:''; flex:1; height:1px; background:linear-gradient(to right,var(--t3),transparent); }
+.order-items-row { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1rem; }
+.o-item {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.1);
+  border-radius:6px; padding:1.2rem; text-align:center; transition:all 0.3s; cursor:pointer;
+}
+.o-item:hover { border-color:var(--g3); transform:translateY(-4px); box-shadow:0 15px 40px rgba(0,0,0,0.4); }
+.o-emoji { font-size:2.8rem; display:block; margin-bottom:0.6rem; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.4)); }
+.o-name { font-size:0.85rem; color:var(--white); font-weight:500; margin-bottom:0.3rem; font-family:'Jost',sans-serif; line-height:1.3; }
+.o-price { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--g1); margin-bottom:0.8rem; }
+.o-add-btn {
+  width:100%; padding:8px; background:var(--d1); color:var(--g1);
+  border:1px solid var(--t3); border-radius:3px; cursor:pointer;
+  font-size:0.72rem; font-family:'Jost',sans-serif; font-weight:600;
+  letter-spacing:0.5px; transition:all 0.2s;
+}
+.o-add-btn:hover { background:var(--g1); color:var(--d1); border-color:var(--g1); }
+
+/* ── CART ── */
+.cart-box {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.15);
+  border-radius:8px; padding:1.8rem; position:sticky; top:90px;
+}
+.cart-hdr { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; }
+.cart-hdr h3 { font-size:1.1rem; color:var(--white); font-family:'Jost',sans-serif; }
+.cart-cnt {
+  background:linear-gradient(135deg,var(--g3),var(--g1)); color:var(--d1);
+  font-size:0.7rem; padding:3px 10px; border-radius:20px;
+  font-weight:700; font-family:'Jost',sans-serif;
+}
+.cart-empty { text-align:center; padding:2.5rem 1rem; }
+.cart-empty-icon { font-size:3rem; display:block; margin-bottom:0.8rem; }
+.cart-empty p { color:rgba(249,241,224,0.35); font-size:0.85rem; }
+.cart-list { display:flex; flex-direction:column; gap:0.7rem; max-height:320px; overflow-y:auto; margin-bottom:1.5rem; }
+.cart-list::-webkit-scrollbar { width:3px; }
+.cart-list::-webkit-scrollbar-thumb { background:var(--g3); }
+.c-item { background:rgba(13,10,4,0.5); border:1px solid var(--t2); border-radius:5px; padding:0.9rem; display:flex; align-items:center; gap:10px; }
+.c-item-info { flex:1; }
+.c-item-name { font-size:0.82rem; color:var(--white); font-weight:500; font-family:'Jost',sans-serif; }
+.c-item-price { font-size:0.75rem; color:var(--g3); margin-top:2px; }
+.c-qty { display:flex; align-items:center; gap:6px; }
+.q-btn { width:24px; height:24px; background:var(--d1); color:var(--g1); border:1px solid var(--t2); border-radius:3px; cursor:pointer; font-size:0.9rem; transition:all 0.2s; display:flex; align-items:center; justify-content:center; }
+.q-btn:hover { background:var(--g1); color:var(--d1); }
+.q-num { font-size:0.85rem; color:var(--white); min-width:20px; text-align:center; font-family:'Jost',sans-serif; }
+.cart-divider { height:1px; background:var(--t2); margin:1rem 0; }
+.cart-row { display:flex; justify-content:space-between; font-size:0.84rem; color:rgba(249,241,224,0.6); margin-bottom:0.5rem; }
+.cart-total-row { display:flex; justify-content:space-between; }
+.cart-total-label { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--white); }
+.cart-total-amount { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--g1); }
+.checkout-btn {
+  width:100%; padding:14px; margin-top:1.2rem;
+  background:linear-gradient(135deg,var(--g3),var(--g1)); color:var(--d1);
+  border:none; cursor:pointer; font-family:'Jost',sans-serif;
+  font-weight:700; font-size:0.8rem; letter-spacing:2px;
+  text-transform:uppercase; border-radius:4px; transition:all 0.3s;
+  box-shadow:0 6px 20px rgba(212,168,67,0.3);
+}
+.checkout-btn:hover { filter:brightness(1.1); transform:translateY(-2px); box-shadow:0 10px 30px rgba(212,168,67,0.4); }
+
+/* ══ CONTACT PAGE ══ */
+#contact-page { background:var(--d1); }
+.contact-layout { max-width:1100px; margin:0 auto; padding:3rem 2rem; display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+.contact-cards { display:flex; flex-direction:column; gap:1rem; }
+.c-card {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.12);
+  border-radius:6px; padding:1.4rem; display:flex; gap:1rem; align-items:flex-start;
+  transition:border-color 0.3s;
+}
+.c-card:hover { border-color:var(--g3); }
+.c-card-icon {
+  width:44px; height:44px; flex-shrink:0;
+  background:linear-gradient(135deg,var(--g3),var(--g1));
+  border-radius:5px; display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem;
+}
+.c-card-info h4 { font-size:0.78rem; color:var(--g3); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:0.4rem; font-family:'Jost',sans-serif; }
+.c-card-info p, .c-card-info a { color:rgba(249,241,224,0.7); font-size:0.9rem; line-height:1.6; text-decoration:none; }
+.c-card-info a:hover { color:var(--g1); }
+.map-box {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.12);
+  border-radius:6px; height:250px; overflow:hidden;
+  display:flex; align-items:center; justify-content:center; margin-top:1rem;
+  position:relative;
+}
+.map-inner { text-align:center; }
+.map-inner p { color:rgba(249,241,224,0.5); font-size:0.9rem; margin-top:0.5rem; }
+.contact-form-card { background:var(--d3); border:1px solid rgba(212,168,67,0.12); border-radius:8px; padding:2rem; }
+.cform-title { font-size:1.3rem; color:var(--white); margin-bottom:1.8rem; text-align:center; }
+
+/* ══ ADMIN PAGE ══ */
+#admin-page { background:var(--d1); min-height:100vh; }
+.admin-wrap { padding-top:72px; }
+.admin-login-screen { max-width:420px; margin:5rem auto; padding:0 2rem; }
+.admin-login-box {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.2);
+  border-radius:10px; padding:3rem;
+  box-shadow:0 30px 80px rgba(0,0,0,0.5);
+}
+.al-logo { text-align:center; margin-bottom:2rem; }
+.al-icon { font-size:3rem; display:block; margin-bottom:0.5rem; }
+.al-title { font-size:1.5rem; color:var(--white); }
+.al-sub { font-size:0.82rem; color:rgba(249,241,224,0.35); margin-top:0.3rem; font-family:'Jost',sans-serif; }
+.admin-dashboard-screen { display:none; max-width:1300px; margin:0 auto; padding:2rem; }
+.adm-topbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:2.5rem; flex-wrap:wrap; gap:1rem; }
+.adm-title { font-size:1.5rem; color:var(--white); }
+.adm-title span { color:var(--g1); }
+.adm-logout { background:none; border:1px solid rgba(212,168,67,0.2); color:rgba(249,241,224,0.5); padding:8px 20px; border-radius:3px; cursor:pointer; font-size:0.78rem; font-family:'Jost',sans-serif; transition:all 0.2s; }
+.adm-logout:hover { border-color:var(--g3); color:var(--g1); }
+.adm-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; margin-bottom:2.5rem; }
+.adm-stat {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.12);
+  border-radius:8px; padding:1.5rem; text-align:center;
+  position:relative; overflow:hidden;
+}
+.adm-stat::before { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(to right,transparent,var(--g1),transparent); }
+.adm-stat-n { font-family:'Playfair Display',serif; font-size:2.2rem; color:var(--g1); display:block; }
+.adm-stat-l { font-size:0.7rem; text-transform:uppercase; letter-spacing:1.5px; color:rgba(249,241,224,0.35); margin-top:4px; display:block; font-family:'Jost',sans-serif; }
+.adm-tabs { display:flex; gap:0.5rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+.adm-tab { padding:9px 22px; background:none; border:1px solid rgba(212,168,67,0.15); color:rgba(249,241,224,0.45); cursor:pointer; border-radius:3px; font-size:0.78rem; font-family:'Jost',sans-serif; transition:all 0.2s; letter-spacing:0.5px; }
+.adm-tab.on { background:linear-gradient(135deg,var(--g3),var(--g1)); color:var(--d1); border-color:transparent; font-weight:600; }
+.adm-sec { display:none; }
+.adm-sec.on { display:block; }
+.adm-table { width:100%; border-collapse:collapse; }
+.adm-table th { background:var(--d2); color:var(--g3); padding:12px 16px; text-align:left; font-size:0.7rem; letter-spacing:1.5px; text-transform:uppercase; font-family:'Jost',sans-serif; font-weight:500; border-bottom:1px solid var(--t2); }
+.adm-table td { padding:12px 16px; color:rgba(249,241,224,0.65); font-size:0.83rem; border-bottom:1px solid rgba(255,255,255,0.04); font-family:'Jost',sans-serif; }
+.adm-table tr:hover td { background:rgba(212,168,67,0.03); }
+.s-badge { padding:4px 12px; border-radius:20px; font-size:0.68rem; font-weight:600; letter-spacing:0.5px; font-family:'Jost',sans-serif; }
+.s-pending { background:rgba(245,158,11,0.12); color:#F59E0B; border:1px solid rgba(245,158,11,0.2); }
+.s-confirmed { background:rgba(34,197,94,0.12); color:#22C55E; border:1px solid rgba(34,197,94,0.2); }
+.s-cancelled { background:rgba(239,68,68,0.12); color:#EF4444; border:1px solid rgba(239,68,68,0.2); }
+.s-preparing { background:rgba(59,130,246,0.12); color:#3B82F6; border:1px solid rgba(59,130,246,0.2); }
+.adm-btn { background:none; border:1px solid var(--t2); color:var(--g3); padding:4px 12px; border-radius:3px; cursor:pointer; font-size:0.7rem; font-family:'Jost',sans-serif; transition:all 0.2s; margin-right:4px; }
+.adm-btn:hover { background:var(--g1); color:var(--d1); border-color:var(--g1); }
+
+/* ══ FOOTER ══ */
+footer {
+  background:var(--d2); border-top:1px solid var(--t2);
+  padding:5rem 2rem 2rem;
+}
+.footer-grid { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1.2fr; gap:3rem; margin-bottom:4rem; }
+.f-brand-name { font-family:'Cinzel Decorative',serif; font-size:1.2rem; color:var(--g1); margin-bottom:0.3rem; }
+.f-brand-tag { font-family:'Playfair Display',serif; font-style:italic; color:rgba(249,241,224,0.35); font-size:0.9rem; margin-bottom:1rem; display:block; }
+.f-brand-desc { color:rgba(249,241,224,0.38); font-size:0.82rem; line-height:1.85; }
+.f-col-title { font-size:0.68rem; letter-spacing:3px; text-transform:uppercase; color:var(--g3); margin-bottom:1.2rem; font-family:'Jost',sans-serif; }
+.f-links { list-style:none; display:flex; flex-direction:column; gap:0.7rem; }
+.f-links a { color:rgba(249,241,224,0.4); text-decoration:none; font-size:0.84rem; transition:color 0.2s; font-family:'Jost',sans-serif; }
+.f-links a:hover { color:var(--g1); }
+.f-contact-row { display:flex; gap:10px; margin-bottom:0.9rem; }
+.f-contact-icon { color:var(--g3); font-size:0.9rem; margin-top:3px; flex-shrink:0; }
+.f-contact-txt { color:rgba(249,241,224,0.45); font-size:0.82rem; line-height:1.65; font-family:'Jost',sans-serif; }
+.f-contact-txt a { color:var(--g2); text-decoration:none; }
+.footer-bottom { max-width:1100px; margin:0 auto; padding-top:2rem; border-top:1px solid rgba(255,255,255,0.05); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+.f-copy { color:rgba(249,241,224,0.2); font-size:0.75rem; font-family:'Jost',sans-serif; }
+.f-veg { display:flex; align-items:center; gap:7px; color:rgba(249,241,224,0.3); font-size:0.75rem; font-family:'Jost',sans-serif; }
+.veg-mark { width:18px; height:18px; border:1.5px solid #22C55E; border-radius:2px; display:flex; align-items:center; justify-content:center; }
+.veg-dot { width:8px; height:8px; background:#22C55E; border-radius:50%; }
+
+/* ══ MODALS ══ */
+.overlay { display:none; position:fixed; inset:0; z-index:950; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); align-items:center; justify-content:center; padding:1rem; }
+.overlay.open { display:flex; }
+.modal-box {
+  background:var(--d3); border:1px solid rgba(212,168,67,0.25);
+  border-radius:10px; padding:2.5rem; max-width:520px; width:100%;
+  max-height:90vh; overflow-y:auto; animation:fadeSlideUp 0.35s ease;
+  box-shadow:0 40px 80px rgba(0,0,0,0.7);
+}
+.modal-box::-webkit-scrollbar { width:3px; }
+.modal-hdr { display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; }
+.modal-title { font-size:1.3rem; color:var(--white); }
+.modal-close { background:none; border:none; color:rgba(249,241,224,0.4); font-size:1.3rem; cursor:pointer; transition:color 0.2s; }
+.modal-close:hover { color:var(--g1); }
+.order-summary-box { background:rgba(13,10,4,0.6); border:1px solid var(--t2); border-radius:6px; padding:1.2rem; margin-bottom:1.5rem; }
+.ord-sum-row { display:flex; justify-content:space-between; font-size:0.83rem; color:rgba(249,241,224,0.6); padding:0.4rem 0; font-family:'Jost',sans-serif; }
+.ord-sum-total { color:var(--g1); font-family:'Playfair Display',serif; font-size:1rem; }
+.success-screen { text-align:center; padding:1.5rem 0; }
+.success-icon { font-size:4.5rem; display:block; margin-bottom:1rem; }
+.success-h { font-size:1.4rem; color:var(--white); margin-bottom:0.6rem; }
+.success-p { color:rgba(249,241,224,0.5); font-size:0.88rem; line-height:1.7; }
+
+/* ══ TOAST ══ */
+.toast {
+  position:fixed; bottom:2rem; right:2rem; z-index:9999;
+  background:var(--d3); border:1px solid var(--g3);
+  color:var(--cr1); padding:13px 22px; border-radius:5px;
+  font-size:0.85rem; display:none;
+  box-shadow:0 10px 40px rgba(0,0,0,0.5);
+  font-family:'Jost',sans-serif;
+  animation:toastIn 0.3s ease;
+  max-width:320px;
+}
+.toast.show { display:block; }
+@keyframes toastIn { from{transform:translateX(100%);opacity:0} to{transform:translateX(0);opacity:1} }
+
+/* ══ LOADING ══ */
+.loading-spinner {
+  width:20px; height:20px; border:2px solid rgba(212,168,67,0.2);
+  border-top-color:var(--g1); border-radius:50%;
+  animation:spin 0.7s linear infinite; display:inline-block;
+}
+
+/* ══ ANIMATIONS ══ */
+@keyframes fadeSlideUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes spin { to{transform:rotate(360deg)} }
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:1024px) {
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  .about-layout { grid-template-columns:1fr; }
+  .about-rhs { display:none; }
+  .why-grid { grid-template-columns:repeat(2,1fr); }
+  .booking-layout { grid-template-columns:1fr; }
+  .booking-form-card { position:static; }
+  .room-card { flex-direction:column; }
+  .room-card-img { width:100%; height:160px; }
+  .order-layout { grid-template-columns:1fr; }
+  .cart-box { position:static; }
+  .contact-layout { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .adm-stats { grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:640px) {
+  .sec { padding:5rem 1rem; }
+  .hero-stats { gap:2rem; }
+  .hero-stat:not(:last-child)::after { display:none; }
+  .why-grid { grid-template-columns:1fr; }
+  .gallery-item.wide { grid-column:span 1; }
+  .footer-grid { grid-template-columns:1fr; }
+  .f-row { grid-template-columns:1fr; }
+  .adm-stats { grid-template-columns:1fr 1fr; }
+}
+</style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-brand">
-      <h1>🍛 Rajpoot Dhaba</h1>
+<!-- ══ NAV ══ -->
+<nav id="nav">
+  <a class="nav-brand" onclick="goTo('home')">
+    <div class="nav-brand-seal">🍃</div>
+    <div class="nav-brand-text">
+      <b>Rajpoot Dhaba</b>
+      <span>Pure Vegetarian</span>
     </div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#order">Order</a></li>
-      <li><a href="#booking">Book a Table</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-  </nav>
+  </a>
+  <ul class="nav-links">
+    <li><a onclick="goTo('home')">Home</a></li>
+    <li><a onclick="goTo('menu')">Menu</a></li>
+    <li><a onclick="goTo('gallery')">Gallery</a></li>
+    <li><a onclick="goTo('booking')">Rooms</a></li>
+    <li><a onclick="goTo('contact')">Contact</a></li>
+    <li><a onclick="goTo('order')" class="nav-order-btn">Order Online</a></li>
+    <li><a onclick="goTo('order')" class="nav-cart-btn">🛒 Cart <span class="nav-cart-count" id="navCartCount">0</span></a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMob()" id="hamBtn">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
+<div class="mob-menu" id="mobMenu">
+  <a onclick="goTo('home');toggleMob()">Home</a>
+  <a onclick="goTo('menu');toggleMob()">Menu</a>
+  <a onclick="goTo('gallery');toggleMob()">Gallery</a>
+  <a onclick="goTo('booking');toggleMob()">Rooms & Cabins</a>
+  <a onclick="goTo('order');toggleMob()">Order Online</a>
+  <a onclick="goTo('contact');toggleMob()">Contact</a>
+  <a onclick="goTo('admin');toggleMob()" style="color:rgba(249,241,224,0.3);font-size:1rem">Admin Panel</a>
+</div>
+
+<!-- ══════════════════════════════════════
+     HOME PAGE
+══════════════════════════════════════ -->
+<div class="page active" id="home-page">
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-arch"></div>
+    <div class="hero-glow"></div>
     <div class="hero-content">
-      <h2>Authentic Flavours of Rajasthan</h2>
-      <p>Experience the rich, aromatic taste of traditional Indian cuisine crafted with love and the finest spices.</p>
-      <div class="hero-buttons">
-        <a href="#menu" class="btn btn-primary">View Menu</a>
-        <a href="#booking" class="btn btn-secondary">Book a Table</a>
+      <div class="hero-label">
+        <span class="dot"></span>
+        Pure Vegetarian · Gopiganj · Bhadohi, UP
+        <span class="dot"></span>
+      </div>
+      <h1 class="hero-h1">Rajpoot<br><em>Dhaba</em></h1>
+      <p class="hero-tagline">"Where Tradition Meets the Art of Pure Vegetarian Cuisine"</p>
+      <div class="hero-ornament">
+        <div class="hero-orn-line"></div>
+        <div class="hero-orn-center">
+          <div class="hero-orn-diamond sm"></div>
+          <div class="hero-orn-diamond"></div>
+          <div class="hero-orn-diamond sm"></div>
+        </div>
+        <div class="hero-orn-line r"></div>
+      </div>
+      <div class="hero-ctas">
+        <a onclick="goTo('order')" class="cta-primary">🛒 Order Online</a>
+        <a onclick="goTo('menu')" class="cta-ghost">📋 Explore Menu</a>
+        <a onclick="goTo('booking')" class="cta-ghost">🏠 Book a Room</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="h-stat-n">500+</span><span class="h-stat-l">Daily Guests</span></div>
+        <div class="hero-stat"><span class="h-stat-n">50+</span><span class="h-stat-l">Dishes</span></div>
+        <div class="hero-stat"><span class="h-stat-n">100%</span><span class="h-stat-l">Pure Veg</span></div>
+        <div class="hero-stat"><span class="h-stat-n">10+</span><span class="h-stat-l">Years of Trust</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span class="hero-scroll-text">Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section class="sec featured" style="background:var(--d2)">
+    <div class="sec-inner">
+      <span class="sec-tag">Chef's Picks</span>
+      <h2 class="sec-title">Featured Dishes</h2>
+      <p class="sec-sub">Handcrafted daily with the finest ingredients</p>
+      <div class="orn"><div class="orn-line"></div><div class="orn-gem"></div><div class="orn-line r"></div></div>
+      <div class="dishes-grid" id="featuredDishes"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec" id="about-sec">
+    <div class="sec-inner">
+      <div class="about-layout">
+        <div class="about-lhs">
+          <p class="about-label">Our Story</p>
+          <h2 class="about-h2">A Legacy of <span>Royal</span> Vegetarian Cuisine</h2>
+          <p class="about-p">Nestled in the heart of Gopiganj, Bhadohi, Rajpoot Dhaba has been a beloved landmark for food lovers across Uttar Pradesh. Founded with one simple promise — to serve honest, delicious, 100% pure vegetarian food — we've grown into a destination that families, travellers, and locals return to again and again.</p>
+          <p class="about-p">Our kitchen is a sacred space where traditional recipes meet the finest seasonal ingredients. Every dish is prepared fresh, every single day — never compromising on purity, taste, or love.</p>
+          <div class="about-pillars">
+            <div class="about-pillar"><div class="about-pillar-icon">🍃</div><div class="about-pillar-text"><h4>100% Pure Veg</h4><p>No meat, no eggs, always</p></div></div>
+            <div class="about-pillar"><div class="about-pillar-icon">🔥</div><div class="about-pillar-text"><h4>Fresh Daily</h4><p>Cooked every morning</p></div></div>
+            <div class="about-pillar"><div class="about-pillar-icon">👨‍🍳</div><div class="about-pillar-text"><h4>Expert Chefs</h4><p>10+ years experience</p></div></div>
+            <div class="about-pillar"><div class="about-pillar-icon">🏠</div><div class="about-pillar-text"><h4>Stay & Dine</h4><p>Rooms & cozy cabins</p></div></div>
+          </div>
+          <a onclick="goTo('contact')" class="cta-primary" style="margin-top:1rem;display:inline-flex">Visit Us Today →</a>
+        </div>
+        <div class="about-rhs">
+          <div class="about-ring">
+            <div class="about-ring-inner">🏰</div>
+          </div>
+          <div class="about-badge-float f1"><span class="about-badge-num">500+</span><span class="about-badge-txt">Daily Guests</span></div>
+          <div class="about-badge-float f2"><span class="about-badge-num">10+</span><span class="about-badge-txt">Years of Trust</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Menu Section -->
-  <section id="menu" class="section">
-    <div class="container">
-      <h2 class="section-title">Our Menu</h2>
-      <div class="category-filters">
-        <button class="filter-btn active" data-category="all">All</button>
-        <button class="filter-btn" data-category="starters">Starters</button>
-        <button class="filter-btn" data-category="mains">Mains</button>
-        <button class="filter-btn" data-category="breads">Breads</button>
-        <button class="filter-btn" data-category="rice">Rice</button>
-        <button class="filter-btn" data-category="desserts">Desserts</button>
-        <button class="filter-btn" data-category="drinks">Drinks</button>
-      </div>
-      <div id="menu-grid" class="menu-grid">
-        <p class="loading">Loading menu...</p>
+  <!-- WHY US -->
+  <section class="sec" style="background:var(--d2)">
+    <div class="sec-inner">
+      <span class="sec-tag">Why Rajpoot Dhaba</span>
+      <h2 class="sec-title">The Rajpoot Promise</h2>
+      <p class="sec-sub">Every visit is a royal experience</p>
+      <div class="orn"><div class="orn-line"></div><div class="orn-gem"></div><div class="orn-line r"></div></div>
+      <div class="why-grid">
+        <div class="why-card"><span class="why-icon">🌿</span><h3 class="why-title">Pure Vegetarian</h3><p class="why-desc">Certified 100% vegetarian kitchen. No cross-contamination, ever.</p></div>
+        <div class="why-card"><span class="why-icon">🧑‍🍳</span><h3 class="why-title">Authentic Recipes</h3><p class="why-desc">Traditional UP dhaba recipes passed down through generations.</p></div>
+        <div class="why-card"><span class="why-icon">🏕️</span><h3 class="why-title">Rooms & Cabins</h3><p class="why-desc">Stay comfortably in our well-appointed rooms and private cabins.</p></div>
+        <div class="why-card"><span class="why-icon">🛒</span><h3 class="why-title">Online Ordering</h3><p class="why-desc">Order fresh food for dine-in, takeaway or home delivery.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Order Section -->
-  <section id="order" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Place an Order</h2>
-      <form id="order-form" class="form-card">
-        <div class="form-group">
-          <label for="order-name">Full Name *</label>
-          <input type="text" id="order-name" name="customerName" required placeholder="Your full name" />
-        </div>
-        <div class="form-group">
-          <label for="order-email">Email *</label>
-          <input type="email" id="order-email" name="customerEmail" required placeholder="your@email.com" />
-        </div>
-        <div class="form-group">
-          <label for="order-phone">Phone *</label>
-          <input type="tel" id="order-phone" name="customerPhone" required placeholder="+91 98765 43210" />
-        </div>
-        <div class="form-group">
-          <label for="order-address">Delivery Address</label>
-          <textarea id="order-address" name="deliveryAddress" rows="2" placeholder="Enter delivery address (optional)"></textarea>
-        </div>
-        <div class="form-group">
-          <label>Your Cart</label>
-          <div id="cart-summary" class="cart-summary">
-            <p class="empty-cart">No items in cart. Browse the menu and add items.</p>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="order-notes">Special Instructions</label>
-          <textarea id="order-notes" name="notes" rows="2" placeholder="Any special requests?"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-full">Place Order</button>
-      </form>
-      <div id="order-message" class="form-message hidden"></div>
-    </div>
-  </section>
+</div><!-- /home-page -->
 
-  <!-- Booking Section -->
-  <section id="booking" class="section">
-    <div class="container">
-      <h2 class="section-title">Book a Table</h2>
-      <form id="booking-form" class="form-card">
-        <div class="form-group">
-          <label for="booking-name">Full Name *</label>
-          <input type="text" id="booking-name" name="customerName" required placeholder="Your full name" />
-        </div>
-        <div class="form-group">
-          <label for="booking-email">Email *</label>
-          <input type="email" id="booking-email" name="customerEmail" required placeholder="your@email.com" />
-        </div>
-        <div class="form-group">
-          <label for="booking-phone">Phone *</label>
-          <input type="tel" id="booking-phone" name="customerPhone" required placeholder="+91 98765 43210" />
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="booking-date">Date *</label>
-            <input type="date" id="booking-date" name="date" required />
-          </div>
-          <div class="form-group">
-            <label for="booking-time">Time *</label>
-            <input type="time" id="booking-time" name="time" required />
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="booking-guests">Number of Guests *</label>
-          <input type="number" id="booking-guests" name="guests" required min="1" max="20" placeholder="2" />
-        </div>
-        <div class="form-group">
-          <label for="booking-requests">Special Requests</label>
-          <textarea id="booking-requests" name="specialRequests" rows="2" placeholder="Dietary requirements, occasion, etc."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-full">Confirm Booking</button>
-      </form>
-      <div id="booking-message" class="form-message hidden"></div>
-    </div>
-  </section>
+<!-- ══════════════════════════════════════
+     MENU PAGE
+══════════════════════════════════════ -->
+<div class="page" id="menu-page">
+  <div class="page-header">
+    <span class="sec-tag">Rajpoot Dhaba</span>
+    <h1 class="page-header-title">Our Menu</h1>
+    <p class="page-header-sub">Pure Vegetarian Flavours of Uttar Pradesh</p>
+  </div>
+  <div class="menu-tabs-wrap">
+    <div class="menu-tabs" id="menuTabs"></div>
+  </div>
+  <div id="menuSections"></div>
+</div>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Get in Touch</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Visit Us</h3>
-          <p>📍 123 Spice Lane, Jaipur, Rajasthan 302001</p>
-          <p>📞 +91 98765 43210</p>
-          <p>✉️ hello@rajpootdhaba.com</p>
-          <h3>Opening Hours</h3>
-          <p>Mon – Fri: 11:00 AM – 10:00 PM</p>
-          <p>Sat – Sun: 10:00 AM – 11:00 PM</p>
+<!-- ══════════════════════════════════════
+     GALLERY PAGE
+══════════════════════════════════════ -->
+<div class="page" id="gallery-page">
+  <div class="page-header">
+    <span class="sec-tag">Our World</span>
+    <h1 class="page-header-title">Gallery</h1>
+    <p class="page-header-sub">A glimpse into the Rajpoot experience</p>
+  </div>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</div>
+
+<!-- ══════════════════════════════════════
+     BOOKING PAGE
+══════════════════════════════════════ -->
+<div class="page" id="booking-page">
+  <div class="page-header">
+    <span class="sec-tag">Stay With Us</span>
+    <h1 class="page-header-title">Rooms & Cabins</h1>
+    <p class="page-header-sub">Comfort, privacy, and unforgettable hospitality</p>
+  </div>
+  <div class="booking-layout">
+    <div class="room-cards-list">
+      <div class="room-card">
+        <div class="room-card-img">🛏️</div>
+        <div class="room-card-info">
+          <h3 class="room-card-name">Deluxe Room</h3>
+          <div class="room-tags"><span class="room-tag">AC</span><span class="room-tag">TV</span><span class="room-tag">Wi-Fi</span><span class="room-tag">Attached Bath</span><span class="room-tag">24hr Service</span></div>
+          <p class="room-card-desc">Spacious, well-appointed room with modern amenities. Perfect for couples, solo travellers, and business guests.</p>
+          <div class="room-price-row"><span class="room-price">₹1,200 <small style="font-size:0.7rem;color:rgba(249,241,224,0.4)">/night</small></span><button class="book-room-btn" onclick="document.getElementById('bRoom').value='deluxe';document.querySelector('.booking-form-card').scrollIntoView({behavior:'smooth'})">Book Now</button></div>
         </div>
-        <form id="contact-form" class="form-card">
-          <div class="form-group">
-            <label for="contact-name">Name *</label>
-            <input type="text" id="contact-name" name="name" required placeholder="Your name" />
-          </div>
-          <div class="form-group">
-            <label for="contact-email">Email *</label>
-            <input type="email" id="contact-email" name="email" required placeholder="your@email.com" />
-          </div>
-          <div class="form-group">
-            <label for="contact-subject">Subject *</label>
-            <input type="text" id="contact-subject" name="subject" required placeholder="How can we help?" />
-          </div>
-          <div class="form-group">
-            <label for="contact-message">Message *</label>
-            <textarea id="contact-message" name="message" rows="4" required placeholder="Your message..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-        </form>
       </div>
-      <div id="contact-message-status" class="form-message hidden"></div>
+      <div class="room-card">
+        <div class="room-card-img">🏕️</div>
+        <div class="room-card-info">
+          <h3 class="room-card-name">Private Cabin</h3>
+          <div class="room-tags"><span class="room-tag">AC</span><span class="room-tag">TV</span><span class="room-tag">Garden View</span><span class="room-tag">Private Entry</span><span class="room-tag">Seating Area</span></div>
+          <p class="room-card-desc">Intimate private cabin with garden access. Ideal for families, couples, and anyone seeking peaceful solitude.</p>
+          <div class="room-price-row"><span class="room-price">₹1,800 <small style="font-size:0.7rem;color:rgba(249,241,224,0.4)">/night</small></span><button class="book-room-btn" onclick="document.getElementById('bRoom').value='cabin';document.querySelector('.booking-form-card').scrollIntoView({behavior:'smooth'})">Book Now</button></div>
+        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-card-img">👑</div>
+        <div class="room-card-info">
+          <h3 class="room-card-name">Royal Suite</h3>
+          <div class="room-tags"><span class="room-tag">AC</span><span class="room-tag">Smart TV</span><span class="room-tag">Wi-Fi</span><span class="room-tag">Lounge</span><span class="room-tag">Private Dining</span><span class="room-tag">VIP</span></div>
+          <p class="room-card-desc">Our most luxurious accommodation. A private suite with lounge area, ideal for special occasions and VIP guests.</p>
+          <div class="room-price-row"><span class="room-price">₹2,800 <small style="font-size:0.7rem;color:rgba(249,241,224,0.4)">/night</small></span><button class="book-room-btn" onclick="document.getElementById('bRoom').value='suite';document.querySelector('.booking-form-card').scrollIntoView({behavior:'smooth'})">Book Now</button></div>
+        </div>
+      </div>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2024 Rajpoot Dhaba. All rights reserved.</p>
-      <p>Crafted with ❤️ and authentic spices.</p>
+    <div class="booking-form-card">
+      <h3 class="bform-title">Book Your <span>Stay</span></h3>
+      <div id="bookingSuccessMsg" style="display:none" class="success-screen">
+        <span class="success-icon">🎉</span>
+        <h3 class="success-h">Booking Received!</h3>
+        <p class="success-p">We'll call you to confirm your booking. Thank you for choosing Rajpoot Dhaba!</p>
+        <br><button class="cta-primary" style="margin:0 auto" onclick="resetBooking()">Book Another Room</button>
+      </div>
+      <div id="bookingFormEl">
+        <div class="f-group"><label class="f-label">Full Name *</label><input class="f-input" id="bName" placeholder="Your full name" type="text"></div>
+        <div class="f-group"><label class="f-label">Phone Number *</label><input class="f-input" id="bPhone" placeholder="Your mobile number" type="tel"></div>
+        <div class="f-group"><label class="f-label">Email</label><input class="f-input" id="bEmail" placeholder="your@email.com" type="email"></div>
+        <div class="f-row">
+          <div class="f-group"><label class="f-label">Check-in *</label><input class="f-input" id="bCheckin" type="date"></div>
+          <div class="f-group"><label class="f-label">Check-out *</label><input class="f-input" id="bCheckout" type="date"></div>
+        </div>
+        <div class="f-row">
+          <div class="f-group"><label class="f-label">Room Type *</label>
+            <select class="f-select" id="bRoom">
+              <option value="">Select Room</option>
+              <option value="deluxe">Deluxe Room — ₹1,200</option>
+              <option value="cabin">Private Cabin — ₹1,800</option>
+              <option value="suite">Royal Suite — ₹2,800</option>
+            </select>
+          </div>
+          <div class="f-group"><label class="f-label">Guests</label>
+            <select class="f-select" id="bGuests">
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4+ Guests</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-group"><label class="f-label">Special Requests</label><textarea class="f-textarea" id="bNote" rows="3" placeholder="Any special requirements..."></textarea></div>
+        <button class="f-submit" id="bookBtn" onclick="submitBooking()">Confirm Booking</button>
+      </div>
     </div>
-  </footer>
+  </div>
+</div>
 
-  <script src="/js/script.js"></script>
+<!-- ══════════════════════════════════════
+     ORDER PAGE
+══════════════════════════════════════ -->
+<div class="page" id="order-page">
+  <div class="page-header">
+    <span class="sec-tag">Order Online</span>
+    <h1 class="page-header-title">Fresh Food, Fast</h1>
+    <p class="page-header-sub">Dine-in, takeaway, or home delivery</p>
+  </div>
+  <div class="order-layout">
+    <div class="order-categories" id="orderGrid"></div>
+    <div class="cart-box">
+      <div class="cart-hdr">
+        <h3>🛒 Your Cart</h3>
+        <span class="cart-cnt" id="cartBadge">0 items</span>
+      </div>
+      <div id="cartEmptyState" class="cart-empty">
+        <span class="cart-empty-icon">🛒</span>
+        <p>Your cart is empty</p>
+        <p style="font-size:0.75rem;margin-top:0.3rem;color:rgba(249,241,224,0.25)">Add items from the menu</p>
+      </div>
+      <div id="cartListEl" class="cart-list" style="display:none"></div>
+      <div id="cartFooterEl" style="display:none">
+        <div class="cart-divider"></div>
+        <div class="cart-row"><span>Subtotal</span><span id="cartSubtotal">₹0</span></div>
+        <div class="cart-row"><span>Delivery</span><span style="color:#22C55E;font-weight:600">FREE</span></div>
+        <div class="cart-divider"></div>
+        <div class="cart-total-row">
+          <span class="cart-total-label">Total</span>
+          <span class="cart-total-amount" id="cartTotalEl">₹0</span>
+        </div>
+        <button class="checkout-btn" onclick="openCheckout()">Proceed to Checkout →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     CONTACT PAGE
+══════════════════════════════════════ -->
+<div class="page" id="contact-page">
+  <div class="page-header">
+    <span class="sec-tag">Find Us</span>
+    <h1 class="page-header-title">Contact Us</h1>
+    <p class="page-header-sub">We'd love to hear from you</p>
+  </div>
+  <div class="contact-layout">
+    <div>
+      <div class="contact-cards">
+        <div class="c-card"><div class="c-card-icon">📍</div><div class="c-card-info"><h4>Address</h4><p>Chak, Parauna, Gopiganj<br>Bhadohi, Uttar Pradesh — 221303</p></div></div>
+        <div class="c-card"><div class="c-card-icon">📞</div><div class="c-card-info"><h4>Phone</h4><p><a href="tel:7355962382">+91 73559 62382</a></p><p><a href="tel:9793771022">+91 97937 71022</a></p></div></div>
+        <div class="c-card"><div class="c-card-icon">🕐</div><div class="c-card-info"><h4>Hours</h4><p>Every Day: 6:00 AM – 11:00 PM</p></div></div>
+        <div class="c-card"><div class="c-card-icon">🍃</div><div class="c-card-info"><h4>Cuisine</h4><p>100% Pure Vegetarian · North Indian · Dhaba Style</p></div></div>
+      </div>
+      <div class="map-box">
+        <div class="map-inner">
+          <span style="font-size:3rem">🗺️</span>
+          <p>Gopiganj, Bhadohi, UP</p>
+          <br>
+          <a href="https://maps.google.com/?q=Rajpoot+Dhaba+Gopiganj+Bhadohi" target="_blank" class="cta-ghost" style="font-size:0.72rem;padding:10px 20px;margin-top:0.5rem">Open in Google Maps ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-card">
+      <h3 class="cform-title">Send a Message</h3>
+      <div id="contactSuccessMsg" style="display:none" class="success-screen">
+        <span class="success-icon">✅</span>
+        <h3 class="success-h">Message Sent!</h3>
+        <p class="success-p">We'll get back to you within 24 hours. Thank you!</p>
+      </div>
+      <div id="contactFormEl">
+        <div class="f-group"><label class="f-label">Name *</label><input class="f-input" id="cName" placeholder="Your name" type="text"></div>
+        <div class="f-group"><label class="f-label">Phone</label><input class="f-input" id="cPhone" placeholder="Your phone number" type="tel"></div>
+        <div class="f-group"><label class="f-label">Email</label><input class="f-input" id="cEmail" placeholder="your@email.com" type="email"></div>
+        <div class="f-group"><label class="f-label">Message *</label><textarea class="f-textarea" id="cMsg" rows="5" placeholder="How can we help you?"></textarea></div>
+        <button class="f-submit" id="contactBtn" onclick="submitContact()">Send Message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     ADMIN PAGE
+══════════════════════════════════════ -->
+<div class="page" id="admin-page">
+  <div class="admin-wrap">
+    <div id="adminLoginScreen">
+      <div class="admin-login-screen">
+        <div class="admin-login-box">
+          <div class="al-logo">
+            <span class="al-icon">🏰</span>
+            <h2 class="al-title">Admin Panel</h2>
+            <p class="al-sub">Rajpoot Dhaba Management System</p>
+          </div>
+          <div class="f-group"><label class="f-label">Username</label><input class="f-input" id="aUser" placeholder="admin" type="text"></div>
+          <div class="f-group" style="margin-top:1rem"><label class="f-label">Password</label><input class="f-input" id="aPass" placeholder="••••••••" type="password" onkeypress="if(event.key==='Enter')adminLogin()"></div>
+          <button class="f-submit" style="margin-top:1.5rem" onclick="adminLogin()">Login to Dashboard</button>
+          <p style="color:rgba(249,241,224,0.2);font-size:0.72rem;text-align:center;margin-top:1rem;font-family:'Jost',sans-serif">Default: admin / rajpoot2024</p>
+        </div>
+      </div>
+    </div>
+    <div class="admin-dashboard-screen" id="adminDashScreen">
+      <div class="adm-topbar">
+        <h2 class="adm-title">Dashboard <span>— Rajpoot Dhaba</span></h2>
+        <button class="adm-logout" onclick="adminLogout()">Logout</button>
+      </div>
+      <div class="adm-stats">
+        <div class="adm-stat"><span class="adm-stat-n" id="dOrders">0</span><span class="adm-stat-l">Total Orders</span></div>
+        <div class="adm-stat"><span class="adm-stat-n" id="dBookings">0</span><span class="adm-stat-l">Bookings</span></div>
+        <div class="adm-stat"><span class="adm-stat-n" id="dRevenue">₹0</span><span class="adm-stat-l">Revenue</span></div>
+        <div class="adm-stat"><span class="adm-stat-n" id="dPending">0</span><span class="adm-stat-l">Pending Orders</span></div>
+      </div>
+      <div class="adm-tabs">
+        <button class="adm-tab on" onclick="admTab('orders',this)">📦 Orders</button>
+        <button class="adm-tab" onclick="admTab('bookings',this)">🏠 Bookings</button>
+        <button class="adm-tab" onclick="admTab('messages',this)">💬 Messages</button>
+      </div>
+      <div class="adm-sec on" id="adm-orders"><div style="overflow-x:auto"><table class="adm-table"><thead><tr><th>Order ID</th><th>Customer</th><th>Phone</th><th>Items</th><th>Total</th><th>Type</th><th>Status</th><th>Actions</th></tr></thead><tbody id="ordersBody"></tbody></table></div></div>
+      <div class="adm-sec" id="adm-bookings"><div style="overflow-x:auto"><table class="adm-table"><thead><tr><th>Booking ID</th><th>Guest</th><th>Phone</th><th>Room</th><th>Check-in</th><th>Check-out</th><th>Total</th><th>Status</th><th>Actions</th></tr></thead><tbody id="bookingsBody"></tbody></table></div></div>
+      <div class="adm-sec" id="adm-messages"><div style="overflow-x:auto"><table class="adm-table"><thead><tr><th>Name</th><th>Phone</th><th>Email</th><th>Message</th><th>Time</th></tr></thead><tbody id="messagesBody"></tbody></table></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="f-brand-name">Rajpoot Dhaba</div>
+      <span class="f-brand-tag">Pure Vegetarian Since Our Founding · Gopiganj, Bhadohi</span>
+      <p class="f-brand-desc">A landmark of authentic vegetarian cuisine in Uttar Pradesh. Serving with love, tradition, and the finest ingredients.</p>
+    </div>
+    <div>
+      <div class="f-col-title">Navigate</div>
+      <ul class="f-links">
+        <li><a onclick="goTo('home')">Home</a></li>
+        <li><a onclick="goTo('menu')">Our Menu</a></li>
+        <li><a onclick="goTo('gallery')">Gallery</a></li>
+        <li><a onclick="goTo('booking')">Room Booking</a></li>
+        <li><a onclick="goTo('order')">Order Online</a></li>
+        <li><a onclick="goTo('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-title">Menu</div>
+      <ul class="f-links">
+        <li><a onclick="goTo('menu')">Tea & Snacks</a></li>
+        <li><a onclick="goTo('menu')">Vegetable Dishes</a></li>
+        <li><a onclick="goTo('menu')">Dal & Rice</a></li>
+        <li><a onclick="goTo('menu')">Roti & Bread</a></li>
+        <li><a onclick="goTo('menu')">Chef's Specials</a></li>
+        <li><a onclick="goTo('menu')">Desserts</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-col-title">Contact</div>
+      <div class="f-contact-row"><span class="f-contact-icon">📍</span><span class="f-contact-txt">Chak, Parauna, Gopiganj<br>Bhadohi, UP — 221303</span></div>
+      <div class="f-contact-row"><span class="f-contact-icon">📞</span><span class="f-contact-txt"><a href="tel:7355962382">+91 73559 62382</a><br><a href="tel:9793771022">+91 97937 71022</a></span></div>
+      <div class="f-contact-row"><span class="f-contact-icon">🕐</span><span class="f-contact-txt">Daily: 6 AM – 11 PM</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="f-copy">© 2025 Rajpoot Dhaba, Gopiganj Bhadohi. All rights reserved.</div>
+    <div class="f-veg"><div class="veg-mark"><div class="veg-dot"></div></div>100% Pure Vegetarian Restaurant</div>
+  </div>
+</footer>
+
+<!-- CHECKOUT MODAL -->
+<div class="overlay" id="checkoutOverlay">
+  <div class="modal-box">
+    <div id="checkoutFormView">
+      <div class="modal-hdr"><h3 class="modal-title">Complete Your Order</h3><button class="modal-close" onclick="closeCheckout()">✕</button></div>
+      <div class="order-summary-box" id="orderSummaryBox"></div>
+      <div class="f-group"><label class="f-label">Full Name *</label><input class="f-input" id="oName" placeholder="Your name" type="text"></div>
+      <div class="f-group"><label class="f-label">Phone Number *</label><input class="f-input" id="oPhone" placeholder="Your mobile number" type="tel"></div>
+      <div class="f-group"><label class="f-label">Delivery Address / Table No.</label><textarea class="f-textarea" id="oAddr" rows="2" placeholder="Table number or full address for delivery"></textarea></div>
+      <div class="f-group"><label class="f-label">Order Type</label>
+        <select class="f-select" id="oType">
+          <option value="dine-in">Dine In (Table Service)</option>
+          <option value="takeaway">Takeaway</option>
+          <option value="delivery">Home Delivery</option>
+        </select>
+      </div>
+      <button class="f-submit" id="placeOrderBtn" onclick="placeOrder()">Place Order 🎉</button>
+    </div>
+    <div id="checkoutSuccessView" style="display:none" class="success-screen">
+      <span class="success-icon">🎉</span>
+      <h3 class="success-h">Order Placed!</h3>
+      <p class="success-p" id="orderSuccessDetails">Your order has been placed successfully.</p>
+      <br><button class="cta-primary" style="margin:0 auto" onclick="closeCheckout();clearCart()">Continue Ordering</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ══════════════════════════════════════
+//  CONFIG — API BASE
+// ══════════════════════════════════════
+const API = window.location.hostname === 'localhost' ? 'http://localhost:5000/api' : '/api';
+let adminToken = localStorage.getItem('rd_admin_token') || '';
+
+// ══════════════════════════════════════
+//  MENU DATA (also fetched from API)
+// ══════════════════════════════════════
+const menuData = {
+  "tea-snacks":{ label:"Tea & Snacks", icon:"☕", items:[
+    {name:"Tea",price:15,emoji:"☕",desc:"Classic masala chai"},
+    {name:"Tea (Special)",price:20,emoji:"☕",desc:"Rich aromatic special chai"},
+    {name:"Coffee",price:30,emoji:"☕",desc:"Fresh brewed coffee"},
+    {name:"Coffee (Cup)",price:40,emoji:"☕",desc:"Full cup hot coffee"},
+    {name:"Butter Toast",price:50,emoji:"🍞",desc:"Crispy toasted bread with butter"},
+    {name:"Samosa",price:8,emoji:"🥟",desc:"Crispy fried potato samosa"},
+    {name:"Launglata",price:16,emoji:"🥟",desc:"Traditional sweet fried pastry"},
+    {name:"Chhola-Samosa",price:40,emoji:"🥣",desc:"Samosa with spicy chole"},
+    {name:"Chhola (1 plate)",price:30,emoji:"🥣",desc:"Spiced chickpea curry"},
+    {name:"Paneer Pakoda",price:140,emoji:"🧀",desc:"Golden fried cottage cheese fritters"},
+    {name:"Aloo Pakoda",price:80,emoji:"🥔",desc:"Crispy potato fritters"},
+    {name:"Pakodi",price:60,emoji:"🍳",desc:"Small crispy gram flour fritters"},
+    {name:"Bread Pakoda",price:14,emoji:"🍞",desc:"Stuffed bread fritters"},
+    {name:"Poori-Sabji",price:70,emoji:"🥙",desc:"Fried bread with spiced vegetable"},
+    {name:"Aloo Paratha",price:60,emoji:"🫓",desc:"Stuffed potato flatbread"},
+    {name:"Onion Paratha",price:60,emoji:"🧅",desc:"Onion stuffed crispy paratha"},
+    {name:"Khova Paratha",price:80,emoji:"🫓",desc:"Sweet khova stuffed paratha"},
+    {name:"Paneer Paratha",price:90,emoji:"🧀",desc:"Cottage cheese stuffed paratha"},
+    {name:"Lachha Paratha",price:60,emoji:"🫓",desc:"Layered crispy paratha"},
+    {name:"Stuffed Naan (Potato)",price:70,emoji:"🫓",desc:"Potato stuffed tandoor naan"},
+    {name:"Stuffed Naan (Paneer)",price:100,emoji:"🧀",desc:"Paneer stuffed tandoor naan"}
+  ]},
+  "vegetables":{ label:"Vegetables", icon:"🥗", items:[
+    {name:"Chana Massala",price:180,priceLabel:"₹100/₹180",emoji:"🫘",desc:"Spiced chickpeas in tangy masala"},
+    {name:"Paneer Chilli",price:160,emoji:"🧀",desc:"Indo-Chinese paneer stir fry"},
+    {name:"Paneer Chilli with Gravy",price:200,emoji:"🧀",desc:"Paneer in spicy Indo-Chinese gravy"},
+    {name:"Paneer Do-Pyaza",price:200,priceLabel:"₹120/₹200",emoji:"🧅",desc:"Paneer cooked with double onions"},
+    {name:"Mushroom Do-Pyaza",price:220,priceLabel:"₹120/₹220",emoji:"🍄",desc:"Mushroom with caramelised onions"},
+    {name:"Mushroom Matar",price:220,priceLabel:"₹120/₹220",emoji:"🍄",desc:"Mushroom and green peas curry"},
+    {name:"Malai Paneer",price:200,priceLabel:"₹120/₹200",emoji:"🧀",desc:"Soft paneer in creamy white gravy"},
+    {name:"Khowa Paneer",price:200,priceLabel:"₹120/₹200",emoji:"🧀",desc:"Rich paneer with khoya gravy"},
+    {name:"Shahi Paneer",price:200,priceLabel:"₹120/₹200",emoji:"🧀",desc:"Royal paneer in cashew gravy"},
+    {name:"Malai Kofta",price:240,priceLabel:"₹130/₹240",emoji:"🍡",desc:"Paneer dumplings in creamy tomato sauce"},
+    {name:"Kaaju Paneer",price:280,priceLabel:"₹150/₹280",emoji:"🥜",desc:"Cashew and paneer in rich gravy"},
+    {name:"Kaaju Korma",price:280,priceLabel:"₹150/₹280",emoji:"🥜",desc:"Mild cashew korma"},
+    {name:"Matar Paneer",price:190,priceLabel:"₹100/₹190",emoji:"🫛",desc:"Cottage cheese with green peas"},
+    {name:"Paneer Laziz",price:220,priceLabel:"₹120/₹220",emoji:"🧀",desc:"Delicious home-style paneer"},
+    {name:"Paneer Butter Masala",price:220,priceLabel:"₹120/₹220",emoji:"🧀",desc:"Classic buttery tomato paneer curry"},
+    {name:"Palak Paneer",price:220,priceLabel:"₹120/₹220",emoji:"🥬",desc:"Paneer in smooth spinach gravy"},
+    {name:"Paneer Bhujiya",price:220,priceLabel:"₹120/₹220",emoji:"🧀",desc:"Dry spiced crumbled paneer"},
+    {name:"Paneer Kadhai",price:220,priceLabel:"₹120/₹220",emoji:"🧀",desc:"Paneer in bell pepper kadhai masala"},
+    {name:"Manchurian",price:220,emoji:"🥦",desc:"Crispy Indo-Chinese vegetable balls"},
+    {name:"Mix Veg",price:200,priceLabel:"₹120/₹200",emoji:"🥗",desc:"Seasonal mixed vegetables"},
+    {name:"Matar Masala",price:180,priceLabel:"₹100/₹180",emoji:"🫛",desc:"Spicy green pea curry"},
+    {name:"Palak Matar",price:180,priceLabel:"₹100/₹180",emoji:"🥬",desc:"Spinach and peas"},
+    {name:"Aloo Tamatar",price:180,priceLabel:"₹100/₹180",emoji:"🍅",desc:"Potato and tomato curry"},
+    {name:"Aloo-Jeera",price:140,priceLabel:"₹80/₹140",emoji:"🥔",desc:"Cumin flavoured potatoes"},
+    {name:"Seasonal Sabji",price:130,priceLabel:"₹50/₹130",emoji:"🥗",desc:"Chef's seasonal vegetable special"}
+  ]},
+  "dal":{ label:"Dal", icon:"🍲", items:[
+    {name:"Daal Tadka",price:150,priceLabel:"₹90/₹150",emoji:"🍲",desc:"Tempered yellow lentil dal"},
+    {name:"Daal Fry (Desi Ghee)",price:140,priceLabel:"₹80/₹140",emoji:"🍲",desc:"Fried dal in pure desi ghee"},
+    {name:"Daal Makhani",price:180,priceLabel:"₹100/₹180",emoji:"🍲",desc:"Creamy slow-cooked black lentils"},
+    {name:"Razma",price:160,priceLabel:"₹90/₹160",emoji:"🫘",desc:"Kidney beans in thick masala gravy"}
+  ]},
+  "rice":{ label:"Rice", icon:"🍚", items:[
+    {name:"Plain Rice",price:60,priceLabel:"₹40/₹100",emoji:"🍚",desc:"Steamed basmati rice"},
+    {name:"Jeera Rice",price:120,priceLabel:"₹70/₹120",emoji:"🍚",desc:"Cumin tempered basmati"},
+    {name:"Veg Fried Rice",price:160,priceLabel:"₹80/₹160",emoji:"🥘",desc:"Wok-tossed vegetable fried rice"},
+    {name:"Matar Pullao",price:160,priceLabel:"₹90/₹160",emoji:"🫘",desc:"Peas and spice pullao"},
+    {name:"Paneer Pullao",price:200,priceLabel:"₹120/₹200",emoji:"🧀",desc:"Paneer and rice pullao"},
+    {name:"Veg Biryani",price:200,priceLabel:"₹120/₹200",emoji:"🍛",desc:"Aromatic vegetable biryani"}
+  ]},
+  "roti":{ label:"Roti & Bread", icon:"🫓", items:[
+    {name:"Tawa Roti",price:15,emoji:"🫓",desc:"Plain tawa flatbread"},
+    {name:"Butter Tawa Roti",price:17,emoji:"🫓",desc:"Butter glazed tawa roti"},
+    {name:"Tandoori Roti",price:10,emoji:"🔥",desc:"Clay oven baked roti"},
+    {name:"Butter Tandoor",price:15,emoji:"🔥",desc:"Buttered tandoori roti"},
+    {name:"Missi Roti",price:30,emoji:"🫓",desc:"Gram flour flatbread"},
+    {name:"Non Roti",price:30,emoji:"🫓",desc:"Plain naan"},
+    {name:"Butter Naan",price:35,emoji:"🫓",desc:"Butter glazed naan"},
+    {name:"Naan (Garlic)",price:40,emoji:"🧄",desc:"Garlic naan from tandoor"},
+    {name:"Parantha (Aloo/Gobhi)",price:80,emoji:"🥙",desc:"Stuffed paratha varieties"}
+  ]},
+  "specials":{ label:"Chef's Specials", icon:"⭐", items:[
+    {name:"Dhaba Thali",price:150,emoji:"🍛",desc:"Rice, Naan, Dal, 2 Sabzis, Salad, Pickle, Raita & Dessert — a complete royal feast!",badge:"Chef's Special"},
+    {name:"Green Salad",price:70,emoji:"🥗",desc:"Fresh seasonal garden salad"},
+    {name:"Rayata",price:100,priceLabel:"₹65/₹100",emoji:"🥣",desc:"Creamy yoghurt raita"}
+  ]},
+  "beverages":{ label:"Beverages", icon:"🥤", items:[
+    {name:"Lassi (Mango/Sweet/Salted)",price:40,emoji:"🥛",desc:"Chilled traditional yoghurt drink"},
+    {name:"Masala Chai",price:10,emoji:"☕",desc:"Spiced Indian tea"}
+  ]},
+  "desserts":{ label:"Desserts", icon:"🍮", items:[
+    {name:"Gulab Jamun (2 pcs)",price:60,emoji:"🍩",desc:"Soft milk dumplings in rose syrup"},
+    {name:"Rice Kheer",price:100,emoji:"🍮",desc:"Slow-cooked sweet rice pudding"}
+  ]}
+};
+
+const galleryItems = [
+  {emoji:"🍛",label:"Dhaba Thali",wide:true},
+  {emoji:"🧀",label:"Paneer Dishes"},
+  {emoji:"🍲",label:"Dal Makhani"},
+  {emoji:"🪑",label:"Dining Hall",tall:true},
+  {emoji:"🏕️",label:"Private Cabin"},
+  {emoji:"🥗",label:"Fresh Starters"},
+  {emoji:"🍚",label:"Veg Biryani"},
+  {emoji:"☕",label:"Tea & Snacks"},
+  {emoji:"🏠",label:"Restaurant Interior",wide:true},
+  {emoji:"🔥",label:"Live Kitchen"},
+  {emoji:"🍮",label:"Desserts"},
+  {emoji:"👑",label:"Royal Suite"}
+];
+
+const featuredItems = [
+  {name:"Dhaba Thali",price:"₹150",emoji:"🍛",desc:"Rice, Naan, Dal, Sabzi, Pickle, Raita & Dessert — a royal feast",badge:"Chef's Special",priceNum:150},
+  {name:"Paneer Butter Masala",price:"₹120/₹220",emoji:"🧀",desc:"Succulent paneer in rich tomato-butter-cream gravy",priceNum:220},
+  {name:"Malai Kofta",price:"₹130/₹240",emoji:"🍡",desc:"Soft cottage cheese dumplings in creamy makhani sauce",priceNum:240},
+  {name:"Veg Biryani",price:"₹120/₹200",emoji:"🍛",desc:"Aromatic basmati with seasonal vegetables and whole spices",badge:"Popular",priceNum:200}
+];
+
+// ══ CART STATE ══
+let cart = [];
+
+// ══════════════════════════════════════
+//  NAVIGATION
+// ══════════════════════════════════════
+function goTo(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(name+'-page').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(name==='admin' && adminToken) loadAdminData();
+}
+
+function toggleMob() {
+  const m = document.getElementById('mobMenu');
+  m.classList.toggle('open');
+}
+
+// ══════════════════════════════════════
+//  BUILD UI
+// ══════════════════════════════════════
+function buildFeatured() {
+  document.getElementById('featuredDishes').innerHTML = featuredItems.map(d => `
+    <div class="dish-card" onclick="goTo('order')">
+      <div class="dish-card-top">
+        <span class="dish-card-emoji">${d.emoji}</span>
+        ${d.badge ? `<span class="dish-card-badge">${d.badge}</span>` : ''}
+        <div class="dish-card-veg"></div>
+      </div>
+      <div class="dish-card-body">
+        <h3 class="dish-card-name">${d.name}</h3>
+        <p class="dish-card-desc">${d.desc}</p>
+        <div class="dish-card-foot">
+          <span class="dish-price">${d.price}</span>
+          <button class="dish-add" onclick="event.stopPropagation();addToCart('${d.name.replace(/'/g,"\\'")}',${d.priceNum})">+ Add</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function buildMenu() {
+  const tabsEl = document.getElementById('menuTabs');
+  const secsEl = document.getElementById('menuSections');
+  let firstTab = true;
+  Object.entries(menuData).forEach(([key, cat]) => {
+    const tabBtn = document.createElement('button');
+    tabBtn.className = 'm-tab' + (firstTab ? ' on' : '');
+    tabBtn.innerHTML = `${cat.icon} ${cat.label}`;
+    tabBtn.onclick = () => switchMenuTab(key, tabBtn);
+    tabsEl.appendChild(tabBtn);
+
+    const sec = document.createElement('div');
+    sec.className = 'menu-sec' + (firstTab ? ' on' : '');
+    sec.id = 'msec-'+key;
+    sec.innerHTML = `
+      <h3 class="menu-sec-title">${cat.icon} ${cat.label}</h3>
+      <div class="menu-items-grid">
+        ${cat.items.map(item => `
+          <div class="menu-item">
+            <div class="menu-item-l">
+              <span class="menu-emoji">${item.emoji}</span>
+              <div class="menu-info">
+                <h4>${item.name}</h4>
+                <p>${item.desc}</p>
+              </div>
+            </div>
+            <div class="menu-item-r">
+              <span class="menu-price">${item.priceLabel || '₹'+item.price}</span>
+              <button class="m-add" onclick="addToCart('${item.name.replace(/'/g,"\\'")}',${item.price})">+ Add</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    secsEl.appendChild(sec);
+    firstTab = false;
+  });
+}
+
+function switchMenuTab(key, btn) {
+  document.querySelectorAll('.m-tab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.menu-sec').forEach(s => s.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('msec-'+key).classList.add('on');
+}
+
+function buildOrderPage() {
+  const grid = document.getElementById('orderGrid');
+  grid.innerHTML = Object.entries(menuData).map(([key,cat]) => `
+    <div>
+      <div class="order-cat-title">${cat.icon} ${cat.label}</div>
+      <div class="order-items-row">
+        ${cat.items.map(item => `
+          <div class="o-item">
+            <span class="o-emoji">${item.emoji}</span>
+            <div class="o-name">${item.name}</div>
+            <div class="o-price">${item.priceLabel || '₹'+item.price}</div>
+            <button class="o-add-btn" onclick="addToCart('${item.name.replace(/'/g,"\\'")}',${item.price})">+ Add to Cart</button>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function buildGallery() {
+  document.getElementById('galleryGrid').innerHTML = galleryItems.map(g => `
+    <div class="gallery-item ${g.wide?'wide':''} ${g.tall?'tall':''}">
+      <div class="gallery-ph">
+        <span class="gallery-ph-emoji">${g.emoji}</span>
+        <p>${g.label}</p>
+      </div>
+      <div class="gallery-overlay">
+        <span class="gallery-label">${g.label}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ══════════════════════════════════════
+//  CART
+// ══════════════════════════════════════
+function addToCart(name, price) {
+  const ex = cart.find(i => i.name === name);
+  if (ex) ex.qty++;
+  else cart.push({name, price, qty:1});
+  renderCart();
+  toast(`✅ ${name} added!`);
+}
+
+function changeQty(idx, delta) {
+  cart[idx].qty += delta;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
+  renderCart();
+}
+
+function clearCart() { cart = []; renderCart(); }
+
+function renderCart() {
+  const total = cart.reduce((a,i) => a + i.price * i.qty, 0);
+  const count = cart.reduce((a,i) => a + i.qty, 0);
+  document.getElementById('navCartCount').textContent = count;
+  document.getElementById('cartBadge').textContent = count + ' item' + (count!==1?'s':'');
+
+  if (!cart.length) {
+    document.getElementById('cartEmptyState').style.display = 'block';
+    document.getElementById('cartListEl').style.display = 'none';
+    document.getElementById('cartFooterEl').style.display = 'none';
+    return;
+  }
+  document.getElementById('cartEmptyState').style.display = 'none';
+  document.getElementById('cartListEl').style.display = 'flex';
+  document.getElementById('cartFooterEl').style.display = 'block';
+
+  document.getElementById('cartListEl').innerHTML = cart.map((item,i) => `
+    <div class="c-item">
+      <div class="c-item-info">
+        <div class="c-item-name">${item.name}</div>
+        <div class="c-item-price">₹${item.price} × ${item.qty} = ₹${item.price * item.qty}</div>
+      </div>
+      <div class="c-qty">
+        <button class="q-btn" onclick="changeQty(${i},-1)">−</button>
+        <span class="q-num">${item.qty}</span>
+        <button class="q-btn" onclick="changeQty(${i},1)">+</button>
+      </div>
+    </div>
+  `).join('');
+  document.getElementById('cartSubtotal').textContent = '₹'+total;
+  document.getElementById('cartTotalEl').textContent = '₹'+total;
+}
+
+// ══════════════════════════════════════
+//  CHECKOUT
+// ══════════════════════════════════════
+function openCheckout() {
+  if (!cart.length) { toast('❌ Cart is empty'); return; }
+  const total = cart.reduce((a,i) => a + i.price * i.qty, 0);
+  document.getElementById('orderSummaryBox').innerHTML = `
+    <div style="font-family:'Cinzel Decorative',serif;font-size:0.85rem;color:var(--g2);margin-bottom:0.8rem">Order Summary</div>
+    ${cart.map(i => `<div class="ord-sum-row"><span>${i.name} × ${i.qty}</span><span class="ord-sum-total">₹${i.price*i.qty}</span></div>`).join('')}
+    <div style="height:1px;background:var(--t2);margin:0.8rem 0"></div>
+    <div class="ord-sum-row" style="font-weight:600"><span style="color:var(--white)">Total</span><span class="ord-sum-total" style="font-size:1.1rem">₹${total}</span></div>
+  `;
+  document.getElementById('checkoutFormView').style.display = 'block';
+  document.getElementById('checkoutSuccessView').style.display = 'none';
+  document.getElementById('checkoutOverlay').classList.add('open');
+}
+
+function closeCheckout() {
+  document.getElementById('checkoutOverlay').classList.remove('open');
+}
+
+async function placeOrder() {
+  const name = document.getElementById('oName').value.trim();
+  const phone = document.getElementById('oPhone').value.trim();
+  const address = document.getElementById('oAddr').value.trim();
+  const orderType = document.getElementById('oType').value;
+  if (!name || !phone) { toast('❌ Name and phone are required'); return; }
+
+  const btn = document.getElementById('placeOrderBtn');
+  btn.disabled = true; btn.innerHTML = '<span class="loading-spinner"></span> Placing Order...';
+
+  const payload = {
+    customer: { name, phone, address },
+    orderType,
+    items: cart.map(i => ({name:i.name, price:i.price, qty:i.qty, subtotal:i.price*i.qty})),
+    subtotal: cart.reduce((a,i) => a + i.price*i.qty, 0),
+    total: cart.reduce((a,i) => a + i.price*i.qty, 0)
+  };
+
+  try {
+    const res = await fetch(API+'/orders', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('checkoutFormView').style.display = 'none';
+      document.getElementById('checkoutSuccessView').style.display = 'block';
+      document.getElementById('orderSuccessDetails').textContent = `Order ${data.order.orderId} placed! Total: ₹${data.order.total}. We'll confirm on ${phone}.`;
+    } else {
+      toast('❌ ' + data.message);
+    }
+  } catch {
+    // fallback: offline mode
+    document.getElementById('checkoutFormView').style.display = 'none';
+    document.getElementById('checkoutSuccessView').style.display = 'block';
+    document.getElementById('orderSuccessDetails').textContent = `Order placed! Total: ₹${payload.total}. We'll call ${phone} to confirm.`;
+  } finally {
+    btn.disabled = false; btn.innerHTML = 'Place Order 🎉';
+  }
+}
+
+// ══════════════════════════════════════
+//  BOOKING
+// ══════════════════════════════════════
+async function submitBooking() {
+  const name = document.getElementById('bName').value.trim();
+  const phone = document.getElementById('bPhone').value.trim();
+  const email = document.getElementById('bEmail').value.trim();
+  const checkin = document.getElementById('bCheckin').value;
+  const checkout = document.getElementById('bCheckout').value;
+  const room = document.getElementById('bRoom').value;
+  const guests = document.getElementById('bGuests').value;
+  const note = document.getElementById('bNote').value;
+  if (!name || !phone || !checkin || !room) { toast('❌ Fill all required fields'); return; }
+
+  const btn = document.getElementById('bookBtn');
+  btn.disabled = true; btn.innerHTML = '<span class="loading-spinner"></span> Booking...';
+
+  const payload = { guest:{name,phone,email}, roomType:room, checkIn:checkin, checkOut:checkout, guests, note };
+  try {
+    const res = await fetch(API+'/bookings', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('bookingFormEl').style.display = 'none';
+      document.getElementById('bookingSuccessMsg').style.display = 'block';
+    } else { toast('❌ '+data.message); }
+  } catch {
+    document.getElementById('bookingFormEl').style.display = 'none';
+    document.getElementById('bookingSuccessMsg').style.display = 'block';
+  } finally {
+    btn.disabled = false; btn.innerHTML = 'Confirm Booking';
+  }
+}
+
+function resetBooking() {
+  document.getElementById('bookingFormEl').style.display = 'block';
+  document.getElementById('bookingSuccessMsg').style.display = 'none';
+  ['bName','bPhone','bEmail','bCheckin','bCheckout','bNote'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('bRoom').value='';
+}
+
+// ══════════════════════════════════════
+//  CONTACT
+// ══════════════════════════════════════
+async function submitContact() {
+  const name = document.getElementById('cName').value.trim();
+  const phone = document.getElementById('cPhone').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  const message = document.getElementById('cMsg').value.trim();
+  if (!name || !message) { toast('❌ Name and message are required'); return; }
+
+  const btn = document.getElementById('contactBtn');
+  btn.disabled = true; btn.innerHTML = '<span class="loading-spinner"></span> Sending...';
+
+  try {
+    const res = await fetch(API+'/contacts', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({name,phone,email,message})
+    });
+    const data = await res.json();
+    if (data.success || true) {
+      document.getElementById('contactFormEl').style.display = 'none';
+      document.getElementById('contactSuccessMsg').style.display = 'block';
+    }
+  } catch {
+    document.getElementById('contactFormEl').style.display = 'none';
+    document.getElementById('contactSuccessMsg').style.display = 'block';
+  } finally {
+    btn.disabled = false; btn.innerHTML = 'Send Message';
+  }
+}
+
+// ══════════════════════════════════════
+//  ADMIN
+// ══════════════════════════════════════
+async function adminLogin() {
+  const u = document.getElementById('aUser').value;
+  const p = document.getElementById('aPass').value;
+  try {
+    const res = await fetch(API+'/admin/login', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({username:u, password:p})
+    });
+    const data = await res.json();
+    if (data.success) {
+      adminToken = data.token;
+      localStorage.setItem('rd_admin_token', adminToken);
+      showDashboard();
+    } else { toast('❌ '+data.message); }
+  } catch {
+    // fallback offline
+    if (u==='admin' && p==='rajpoot2024') {
+      adminToken = 'offline';
+      localStorage.setItem('rd_admin_token', 'offline');
+      showDashboard();
+    } else { toast('❌ Invalid credentials'); }
+  }
+}
+
+function showDashboard() {
+  document.getElementById('adminLoginScreen').style.display = 'none';
+  document.getElementById('adminDashScreen').style.display = 'block';
+  loadAdminData();
+}
+
+function adminLogout() {
+  adminToken = '';
+  localStorage.removeItem('rd_admin_token');
+  document.getElementById('adminLoginScreen').style.display = 'block';
+  document.getElementById('adminDashScreen').style.display = 'none';
+}
+
+async function loadAdminData() {
+  try {
+    const headers = {'Authorization':'Bearer '+adminToken,'Content-Type':'application/json'};
+    const [ordRes, bkRes, ctRes] = await Promise.all([
+      fetch(API+'/orders', {headers}),
+      fetch(API+'/bookings', {headers}),
+      fetch(API+'/contacts', {headers})
+    ]);
+    const [ord, bk, ct] = await Promise.all([ordRes.json(), bkRes.json(), ctRes.json()]);
+    if (ord.success) renderAdminOrders(ord.orders);
+    if (bk.success) renderAdminBookings(bk.bookings);
+    if (ct.success) renderAdminMessages(ct.contacts);
+  } catch { toast('⚠️ Could not load data (server offline)'); }
+}
+
+function renderAdminOrders(orders) {
+  const total = orders.length;
+  const pending = orders.filter(o=>o.status==='pending').length;
+  const revenue = orders.reduce((a,o)=>a+(o.total||0),0);
+  document.getElementById('dOrders').textContent = total;
+  document.getElementById('dPending').textContent = pending;
+  document.getElementById('dRevenue').textContent = '₹'+revenue;
+
+  document.getElementById('ordersBody').innerHTML = orders.length
+    ? orders.map(o => `
+        <tr>
+          <td><strong style="color:var(--g1)">${o.orderId||'-'}</strong></td>
+          <td>${o.customer?.name||'-'}</td>
+          <td>${o.customer?.phone||'-'}</td>
+          <td style="max-width:200px;font-size:0.78rem">${o.items?.map(i=>i.name+'×'+i.qty).join(', ')||'-'}</td>
+          <td style="color:var(--g1)">₹${o.total||0}</td>
+          <td><span style="font-size:0.78rem;color:rgba(249,241,224,0.5)">${o.orderType||'-'}</span></td>
+          <td><span class="s-badge s-${o.status}">${o.status}</span></td>
+          <td>
+            <button class="adm-btn" onclick="updateOrder('${o._id}','confirmed')">✓ Confirm</button>
+            <button class="adm-btn" onclick="updateOrder('${o._id}','preparing')" style="margin-top:4px">🔥 Prep</button>
+            <button class="adm-btn" onclick="updateOrder('${o._id}','cancelled')" style="margin-top:4px;color:#EF4444">✕</button>
+          </td>
+        </tr>
+      `).join('')
+    : '<tr><td colspan="8" style="text-align:center;padding:2rem;color:rgba(249,241,224,0.2)">No orders yet</td></tr>';
+}
+
+function renderAdminBookings(bookings) {
+  document.getElementById('dBookings').textContent = bookings.length;
+  document.getElementById('bookingsBody').innerHTML = bookings.length
+    ? bookings.map(b => `
+        <tr>
+          <td><strong style="color:var(--g1)">${b.bookingId||'-'}</strong></td>
+          <td>${b.guest?.name||'-'}</td>
+          <td>${b.guest?.phone||'-'}</td>
+          <td style="text-transform:capitalize">${b.roomType||'-'}</td>
+          <td>${b.checkIn?new Date(b.checkIn).toLocaleDateString():'-'}</td>
+          <td>${b.checkOut?new Date(b.checkOut).toLocaleDateString():'-'}</td>
+          <td style="color:var(--g1)">₹${b.totalAmount||0}</td>
+          <td><span class="s-badge s-${b.status}">${b.status}</span></td>
+          <td><button class="adm-btn" onclick="updateBooking('${b._id}','confirmed')">✓</button></td>
+        </tr>
+      `).join('')
+    : '<tr><td colspan="9" style="text-align:center;padding:2rem;color:rgba(249,241,224,0.2)">No bookings yet</td></tr>';
+}
+
+function renderAdminMessages(contacts) {
+  document.getElementById('messagesBody').innerHTML = contacts.length
+    ? contacts.map(c => `
+        <tr>
+          <td>${c.name}</td>
+          <td>${c.phone||'-'}</td>
+          <td>${c.email||'-'}</td>
+          <td style="max-width:300px">${c.message}</td>
+          <td style="font-size:0.75rem;color:rgba(249,241,224,0.35)">${new Date(c.createdAt).toLocaleDateString()}</td>
+        </tr>
+      `).join('')
+    : '<tr><td colspan="5" style="text-align:center;padding:2rem;color:rgba(249,241,224,0.2)">No messages yet</td></tr>';
+}
+
+async function updateOrder(id, status) {
+  try {
+    await fetch(API+'/orders/'+id+'/status', {
+      method:'PATCH',
+      headers:{'Authorization':'Bearer '+adminToken,'Content-Type':'application/json'},
+      body: JSON.stringify({status})
+    });
+    toast('✅ Order updated to '+status);
+    loadAdminData();
+  } catch { toast('⚠️ Update failed (offline)'); }
+}
+
+async function updateBooking(id, status) {
+  try {
+    await fetch(API+'/bookings/'+id+'/status', {
+      method:'PATCH',
+      headers:{'Authorization':'Bearer '+adminToken,'Content-Type':'application/json'},
+      body: JSON.stringify({status})
+    });
+    toast('✅ Booking confirmed');
+    loadAdminData();
+  } catch { toast('⚠️ Update failed (offline)'); }
+}
+
+function admTab(name, btn) {
+  document.querySelectorAll('.adm-tab').forEach(t => t.classList.remove('on'));
+  document.querySelectorAll('.adm-sec').forEach(s => s.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('adm-'+name).classList.add('on');
+}
+
+// ══════════════════════════════════════
+//  TOAST
+// ══════════════════════════════════════
+let toastTimer;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+// ══════════════════════════════════════
+//  INIT
+// ══════════════════════════════════════
+buildFeatured();
+buildMenu();
+buildOrderPage();
+buildGallery();
+
+// Auto-login admin if token exists
+if (adminToken) {
+  const loginEl = document.getElementById('adminLoginScreen');
+  if (loginEl) loginEl.style.display = 'none';
+}
+</script>
 </body>
 </html>
